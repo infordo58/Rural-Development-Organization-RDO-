@@ -299,46 +299,134 @@
     </div>
   </section>
 
-  <!-- Donate Section -->
+<!-- Donate Section -->
   <section id="donate">
-    <h2 class="section-title">Official Bank Accounts (Donations)</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">For transparent financial management, donations, and grants, support Rural Development Organization (RDO) directly via our official accounts:</p>
+    <h2 class="section-title">Support Our Cause (Direct Bank Transfer)</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then submit your donation notification for tracking and tax receipts.</p>
 
-    <div class="bank-card">
-      <h4>Meezan Bank</h4>
-      <p><strong>Branch:</strong> Auto Bhan Branch, Hyderabad</p>
-      <p><strong>Account Number:</strong> 1606 0115220768</p>
-      <p><strong>IBAN:</strong> PK81 MEZN 0016 0601 1522 0768</p>
-    </div>
+    <!-- Interactive Donation Container -->
+    <div style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); max-width: 750px; margin: 0 auto;">
+      
+      <!-- Bank Selection Dropdown -->
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label for="bankSelect" style="font-size: 1.1rem; color: var(--primary-color);">1. Select Preferred Bank:</label>
+        <select id="bankSelect" onchange="updateBankDetails()" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
+          <option value="meezan">Meezan Bank</option>
+          <option value="habib">Habib Metropolitan Bank Ltd.</option>
+          <option value="sindh">Sindh Bank Limited</option>
+          <option value="firstwomen">First Women Bank Ltd.</option>
+          <option value="mcb">MCB Bank Limited</option>
+        </select>
+      </div>
 
-    <div class="bank-card">
-      <h4>Habib Metropolitan Bank Ltd.</h4>
-      <p><strong>Branch:</strong> Industrial Area Korangi Branch</p>
-      <p><strong>Account Number:</strong> 6-0</p>
-      <p><strong>IBAN:</strong> PK59 MPBL 0162 0271 4096 9070</p>
-    </div>
+      <!-- Dynamic Bank Info Display Box -->
+      <div id="bankInfoDisplay" style="background: var(--bg-light); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--accent-color); margin-bottom: 2rem;">
+        <h4 id="displayBankName" style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.2rem;">Meezan Bank</h4>
+        <p><strong>Account Title:</strong> Rural Development Organization</p>
+        <p><strong>Branch:</strong> <span id="displayBranch">Auto Bhan Branch, Hyderabad</span></p>
+        <p><strong>Account Number:</strong> <span id="displayAccount">1606 0115220768</span></p>
+        <p><strong>IBAN:</strong> <span id="displayIban">PK81 MEZN 0016 0601 1522 0768</span></p>
+      </div>
 
-    <div class="bank-card">
-      <h4>Sindh Bank Limited</h4>
-      <p><strong>Branch:</strong> Autobhan Road Branch, Hyderabad</p>
-      <p><strong>Account Number:</strong> 0004011822732001</p>
-      <p><strong>IBAN:</strong> PK97 SIND 0004 0118 2273 2001</p>
-    </div>
+      <!-- Donation Form Submission -->
+      <form action="https://api.web3forms.com/submit" method="POST" style="box-shadow: none; padding: 0;">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New Donation Notification - RDO Website">
+        <input type="hidden" id="selectedBankInput" name="Selected_Bank" value="Meezan Bank">
 
-    <div class="bank-card">
-      <h4>First Women Bank Ltd.</h4>
-      <p><strong>Branch:</strong> Hyderabad Branch (Faraz Villa, Phase-1, Qasimabad)</p>
-      <p><strong>Account Number:</strong> 0017027260510000</p>
-      <p><strong>IBAN:</strong> PK32 FWOM 0017 0272 6051 0000</p>
-    </div>
+        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Submit Your Donation Details</h4>
 
-    <div class="bank-card">
-      <h4>MCB Bank Limited</h4>
-      <p><strong>Branch:</strong> Naseer Chamber Complex, Qasimabad, Hyderabad</p>
-      <p><strong>Account Number:</strong> 1687 5266 6101 0484</p>
-      <p><strong>IBAN:</strong> PK03 MUCB 1687 5266 6101 0484</p>
+        <div class="form-group">
+          <label for="donorName">Full Name</label>
+          <input type="text" id="donorName" name="Donor_Name" required placeholder="Enter your full name">
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="donorEmail">Email Address</label>
+            <input type="email" id="donorEmail" name="Donor_Email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="donorPhone">Contact Number / WhatsApp</label>
+            <input type="text" id="donorPhone" name="Donor_Phone" required placeholder="+92 3XX XXXXXXX">
+          </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="donationAmount">Amount (PKR)</label>
+            <input type="text" id="donationAmount" name="Donation_Amount" required placeholder="e.g., 10,000">
+          </div>
+          <div class="form-group">
+            <label for="fundPurpose">Purpose of Fund</label>
+            <select id="fundPurpose" name="Fund_Purpose" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
+              <option value="General Welfare">General Welfare / Support</option>
+              <option value="Zakat">Zakat</option>
+              <option value="Education & Literacy">Education & Literacy</option>
+              <option value="Healthcare">Healthcare & Protection</option>
+              <option value="Climate & Relief">Climate & Relief Drive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="transactionRef">Transaction ID / Reference Number (Optional)</label>
+          <input type="text" id="transactionRef" name="Transaction_Reference" placeholder="Enter bank transaction reference ID if paid">
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Submit Donation Record</button>
+      </form>
+
     </div>
   </section>
+
+  <!-- JavaScript for Dynamic Bank Switching -->
+  <script>
+    const bankData = {
+      meezan: {
+        name: "Meezan Bank",
+        branch: "Auto Bhan Branch, Hyderabad",
+        account: "1606 0115220768",
+        iban: "PK81 MEZN 0016 0601 1522 0768"
+      },
+      habib: {
+        name: "Habib Metropolitan Bank Ltd.",
+        branch: "Industrial Area Korangi Branch",
+        account: "6-0",
+        iban: "PK59 MPBL 0162 0271 4096 9070"
+      },
+      sindh: {
+        name: "Sindh Bank Limited",
+        branch: "Autobhan Road Branch, Hyderabad",
+        account: "0004011822732001",
+        iban: "PK97 SIND 0004 0118 2273 2001"
+      },
+      firstwomen: {
+        name: "First Women Bank Ltd.",
+        branch: "Hyderabad Branch (Faraz Villa, Phase-1, Qasimabad)",
+        account: "0017027260510000",
+        iban: "PK32 FWOM 0017 0272 6051 0000"
+      },
+      mcb: {
+        name: "MCB Bank Limited",
+        branch: "Naseer Chamber Complex, Qasimabad, Hyderabad",
+        account: "1687 5266 6101 0484",
+        iban: "PK03 MUCB 1687 5266 6101 0484"
+      }
+    };
+
+    function updateBankDetails() {
+      const selectElement = document.getElementById("bankSelect");
+      const selectedKey = selectElement.value;
+      const bank = bankData[selectedKey];
+
+      document.getElementById("displayBankName").innerText = bank.name;
+      document.getElementById("displayBranch").innerText = bank.branch;
+      document.getElementById("displayAccount").innerText = bank.account;
+      document.getElementById("displayIban").innerText = bank.iban;
+      document.getElementById("selectedBankInput").value = bank.name;
+    }
+  </script>
 
   <!-- Contact Form Section -->
   <section id="contact" style="background-color: #eef3f1;">
