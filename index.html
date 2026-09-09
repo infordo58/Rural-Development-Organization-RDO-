@@ -299,10 +299,10 @@
     </div>
   </section>
 
-<!-- Donate Section -->
+        <!-- Donate Section -->
   <section id="donate">
     <h2 class="section-title">Support Our Cause (Direct Bank Transfer)</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then submit your donation notification for tracking and tax receipts.</p>
+    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then click below to send your donation details directly to our official WhatsApp.</p>
 
     <!-- Interactive Donation Container -->
     <div style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); max-width: 750px; margin: 0 auto;">
@@ -312,11 +312,11 @@
         <label for="bankSelect" style="font-size: 1.1rem; color: var(--primary-color);">1. Select Preferred Bank:</label>
         <select id="bankSelect" onchange="updateBankDetails()" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
           <option value="" disabled selected>-- Please select a bank account --</option>
-          <option value="meezan">Meezan Bank</option>
-          <option value="habib">Habib Metropolitan Bank Ltd.</option>
-          <option value="sindh">Sindh Bank Limited</option>
-          <option value="firstwomen">First Women Bank Ltd.</option>
-          <option value="mcb">MCB Bank Limited</option>
+          <option value="Meezan Bank">Meezan Bank</option>
+          <option value="Habib Metropolitan Bank Ltd.">Habib Metropolitan Bank Ltd.</option>
+          <option value="Sindh Bank Limited">Sindh Bank Limited</option>
+          <option value="First Women Bank Ltd.">First Women Bank Ltd.</option>
+          <option value="MCB Bank Limited">MCB Bank Limited</option>
         </select>
       </div>
 
@@ -329,38 +329,34 @@
         <p><strong>IBAN:</strong> <span id="displayIban"></span></p>
       </div>
 
-      <!-- Donation Form Submission -->
-      <form action="https://api.web3forms.com/submit" method="POST" style="box-shadow: none; padding: 0;">
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-        <input type="hidden" name="subject" value="New Donation Notification - RDO Website">
-        <input type="hidden" id="selectedBankInput" name="Selected_Bank" value="Not Selected">
-
-        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Submit Your Donation Details</h4>
+      <!-- Donation Form Sending via WhatsApp -->
+      <form onsubmit="sendToWhatsApp(event)" style="box-shadow: none; padding: 0;">
+        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Enter Your Donation Details & Send via WhatsApp</h4>
 
         <div class="form-group">
           <label for="donorName">Full Name</label>
-          <input type="text" id="donorName" name="Donor_Name" required placeholder="Enter your full name">
+          <input type="text" id="donorName" required placeholder="Enter your full name">
         </div>
 
         <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
           <div class="form-group">
             <label for="donorEmail">Email Address</label>
-            <input type="email" id="donorEmail" name="Donor_Email" required placeholder="Enter your email">
+            <input type="email" id="donorEmail" required placeholder="Enter your email">
           </div>
           <div class="form-group">
             <label for="donorPhone">Contact Number / WhatsApp</label>
-            <input type="text" id="donorPhone" name="Donor_Phone" required placeholder="+92 3XX XXXXXXX">
+            <input type="text" id="donorPhone" required placeholder="+92 3XX XXXXXXX">
           </div>
         </div>
 
         <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
           <div class="form-group">
             <label for="donationAmount">Amount (PKR)</label>
-            <input type="text" id="donationAmount" name="Donation_Amount" required placeholder="e.g., 10,000">
+            <input type="text" id="donationAmount" required placeholder="e.g., 10,000">
           </div>
           <div class="form-group">
             <label for="fundPurpose">Purpose of Fund</label>
-            <select id="fundPurpose" name="Fund_Purpose" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
+            <select id="fundPurpose" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
               <option value="General Welfare">General Welfare / Support</option>
               <option value="Zakat">Zakat</option>
               <option value="Education & Literacy">Education & Literacy</option>
@@ -372,64 +368,90 @@
 
         <div class="form-group">
           <label for="transactionRef">Transaction ID / Reference Number (Optional)</label>
-          <input type="text" id="transactionRef" name="Transaction_Reference" placeholder="Enter bank transaction reference ID if paid">
+          <input type="text" id="transactionRef" placeholder="Enter bank transaction reference ID if paid">
         </div>
 
-        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Submit Donation Record</button>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem; background-color: #25d366;">Send Donation Notification via WhatsApp</button>
       </form>
 
     </div>
   </section>
 
-  <!-- JavaScript for Dynamic Bank Switching -->
+  <!-- JavaScript for Dynamic Bank Switching & WhatsApp Integration -->
   <script>
     const bankData = {
-      meezan: {
-        name: "Meezan Bank",
+      "Meezan Bank": {
         branch: "Auto Bhan Branch, Hyderabad",
         account: "1606 0115220768",
         iban: "PK81 MEZN 0016 0601 1522 0768"
       },
-      habib: {
-        name: "Habib Metropolitan Bank Ltd.",
+      "Habib Metropolitan Bank Ltd.": {
         branch: "Industrial Area Korangi Branch",
         account: "6-0",
         iban: "PK59 MPBL 0162 0271 4096 9070"
       },
-      sindh: {
-        name: "Sindh Bank Limited",
+      "Sindh Bank Limited": {
         branch: "Autobhan Road Branch, Hyderabad",
         account: "0004011822732001",
         iban: "PK97 SIND 0004 0118 2273 2001"
       },
-      firstwomen: {
-        name: "First Women Bank Ltd.",
+      "First Women Bank Ltd.": {
         branch: "Hyderabad Branch (Faraz Villa, Phase-1, Qasimabad)",
         account: "0017027260510000",
         iban: "PK32 FWOM 0017 0272 6051 0000"
       },
-      mcb: {
-        name: "MCB Bank Limited",
+      "MCB Bank Limited": {
         branch: "Naseer Chamber Complex, Qasimabad, Hyderabad",
         account: "1687 5266 6101 0484",
         iban: "PK03 MUCB 1687 5266 6101 0484"
       }
     };
 
+    let selectedBankName = "";
+
     function updateBankDetails() {
       const selectElement = document.getElementById("bankSelect");
-      const selectedKey = selectElement.value;
-      const bank = bankData[selectedKey];
+      selectedBankName = selectElement.value;
+      const bank = bankData[selectedBankName];
       const displayBox = document.getElementById("bankInfoDisplay");
 
       if (bank) {
         displayBox.style.display = "block";
-        document.getElementById("displayBankName").innerText = bank.name;
+        document.getElementById("displayBankName").innerText = selectedBankName;
         document.getElementById("displayBranch").innerText = bank.branch;
         document.getElementById("displayAccount").innerText = bank.account;
         document.getElementById("displayIban").innerText = bank.iban;
-        document.getElementById("selectedBankInput").value = bank.name;
       }
+    }
+
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      if (!selectedBankName) {
+        alert("Please select a bank first.");
+        return;
+      }
+
+      const name = document.getElementById("donorName").value;
+      const email = document.getElementById("donorEmail").value;
+      const phone = document.getElementById("donorPhone").value;
+      const amount = document.getElementById("donationAmount").value;
+      const purpose = document.getElementById("fundPurpose").value;
+      const txRef = document.getElementById("transactionRef").value || "N/A";
+
+      const whatsappNumber = "923333449301"; // RDO official phone number
+
+      const message = `*New Donation Notification - RDO*%0A` +
+                      `-----------------------------------%0A` +
+                      `*Bank Selected:* ${selectedBankName}%0A` +
+                      `*Donor Name:* ${name}%0A` +
+                      `*Email:* ${email}%0A` +
+                      `*Phone/WhatsApp:* ${phone}%0A` +
+                      `*Amount:* ${amount} PKR%0A` +
+                      `*Purpose:* ${purpose}%0A` +
+                      `*Transaction ID:* ${txRef}`;
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
     }
   </script>
   
