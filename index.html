@@ -311,6 +311,7 @@
       <div class="form-group" style="margin-bottom: 1.5rem;">
         <label for="bankSelect" style="font-size: 1.1rem; color: var(--primary-color);">1. Select Preferred Bank:</label>
         <select id="bankSelect" onchange="updateBankDetails()" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
+          <option value="" disabled selected>-- Please select a bank account --</option>
           <option value="meezan">Meezan Bank</option>
           <option value="habib">Habib Metropolitan Bank Ltd.</option>
           <option value="sindh">Sindh Bank Limited</option>
@@ -319,20 +320,20 @@
         </select>
       </div>
 
-      <!-- Dynamic Bank Info Display Box -->
-      <div id="bankInfoDisplay" style="background: var(--bg-light); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--accent-color); margin-bottom: 2rem;">
-        <h4 id="displayBankName" style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.2rem;">Meezan Bank</h4>
+      <!-- Dynamic Bank Info Display Box (Initially Hidden until selection) -->
+      <div id="bankInfoDisplay" style="background: var(--bg-light); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--accent-color); margin-bottom: 2rem; display: none;">
+        <h4 id="displayBankName" style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.2rem;"></h4>
         <p><strong>Account Title:</strong> Rural Development Organization</p>
-        <p><strong>Branch:</strong> <span id="displayBranch">Auto Bhan Branch, Hyderabad</span></p>
-        <p><strong>Account Number:</strong> <span id="displayAccount">1606 0115220768</span></p>
-        <p><strong>IBAN:</strong> <span id="displayIban">PK81 MEZN 0016 0601 1522 0768</span></p>
+        <p><strong>Branch:</strong> <span id="displayBranch"></span></p>
+        <p><strong>Account Number:</strong> <span id="displayAccount"></span></p>
+        <p><strong>IBAN:</strong> <span id="displayIban"></span></p>
       </div>
 
       <!-- Donation Form Submission -->
       <form action="https://api.web3forms.com/submit" method="POST" style="box-shadow: none; padding: 0;">
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
         <input type="hidden" name="subject" value="New Donation Notification - RDO Website">
-        <input type="hidden" id="selectedBankInput" name="Selected_Bank" value="Meezan Bank">
+        <input type="hidden" id="selectedBankInput" name="Selected_Bank" value="Not Selected">
 
         <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Submit Your Donation Details</h4>
 
@@ -419,15 +420,20 @@
       const selectElement = document.getElementById("bankSelect");
       const selectedKey = selectElement.value;
       const bank = bankData[selectedKey];
+      const displayBox = document.getElementById("bankInfoDisplay");
 
-      document.getElementById("displayBankName").innerText = bank.name;
-      document.getElementById("displayBranch").innerText = bank.branch;
-      document.getElementById("displayAccount").innerText = bank.account;
-      document.getElementById("displayIban").innerText = bank.iban;
-      document.getElementById("selectedBankInput").value = bank.name;
+      if (bank) {
+        displayBox.style.display = "block";
+        document.getElementById("displayBankName").innerText = bank.name;
+        document.getElementById("displayBranch").innerText = bank.branch;
+        document.getElementById("displayAccount").innerText = bank.account;
+        document.getElementById("displayIban").innerText = bank.iban;
+        document.getElementById("selectedBankInput").value = bank.name;
+      }
     }
   </script>
-
+  
+  <!-
   <!-- Contact Form Section -->
   <section id="contact" style="background-color: #eef3f1;">
     <h2 class="section-title">Contact & Message Us</h2>
