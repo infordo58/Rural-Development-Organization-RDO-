@@ -133,7 +133,7 @@
       border-radius: 4px;
     }
 
-    /* Donate Section Table / Cards */
+    /* Donate Section Cards */
     .bank-card {
       background: var(--white);
       border: 1px solid #ddd;
@@ -148,24 +148,33 @@
       margin-bottom: 0.5rem;
     }
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-  <!-- Paste your Web3Forms Access Key below -->
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    /* Contact Form Styling */
+    form {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-  <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-  </div>
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required placeholder="Enter your email">
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
-  </div>
-  <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-</form>
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
     /* Footer */
     footer {
@@ -256,8 +265,8 @@
           <img src="coo-photo.jpg" alt="Chief Operating Officer" style="width: 100%; border-radius: 8px; border: 3px solid var(--primary-color);">
         </div>
         <div style="flex: 2; min-width: 280px;">
-          <h3>[Insert COO Name]</h3>
-          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">Chief Operating Officer (COO)</p>
+          <h3>Chief Operating Officer</h3>
+          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">COO</p>
           <blockquote style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1rem;">
             "Our operational strength relies on rigorous policy standards—from PSEA and anti-fraud to transparent procurement and accounting. We ensure that every resource entrusted to RDO directly creates measurable impact on the ground."
           </blockquote>
@@ -336,8 +345,10 @@
       <p><strong>Email:</strong> info.rdo58@gmail.com | <strong>Phone:</strong> +92 333 3449301[cite: 1]</p>
     </div>
 
-    <!-- Replace action URL with your Formspree or Web3Forms key -->
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
+    <!-- Web3Forms Handler -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required placeholder="Enter your full name">
