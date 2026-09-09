@@ -1,166 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rural Development Organization (RDO)</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts & Font Awesome for Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rural Development Organization (RDO)</title>
+  <style>
+    :root {
+      --primary-color: #1b4d3e;
+      --accent-color: #2e8b57;
+      --bg-light: #f4f7f6;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: var(--text-color);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.85)), 
+                  url('hero-banner.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--white);
+      padding: 0.8rem 1.8rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #236b43;
+    }
+
+    /* Container Sections */
+    section {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Registration Badge */
+    .badge-container {
+      background: var(--white);
+      padding: 1.5rem;
+      border-left: 5px solid var(--accent-color);
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+
+    /* Donate Section Table / Cards */
+    .bank-card {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .bank-card h4 {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact Form */
+    form {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">RDO <span>Pakistan</span></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#focus-areas">Our Work</a></li>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#donate" class="btn-primary nav-btn">Donate Now</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>Rural Development Organization (RDO)</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#focus">Focus Areas</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Empowering Rural Communities for a Resilient Future</h1>
-            <p>Dedicated to education, clean water (WASH), health facilities, women empowerment, and disaster response across vulnerable regions.</p>
-            <div class="hero-buttons">
-                <a href="#donate" class="btn-primary">Support Our Cause</a>
-                <a href="#focus-areas" class="btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h2>Empowering Communities, Sustaining Futures</h2>
+    <p>A non-political movement driving grassroots empowerment, mass literacy, primary healthcare, and sustainable economic development across Pakistan.</p>
+    <a href="#donate" class="btn">Support Our Cause</a>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who We Are</h2>
-                <div class="line"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Building Self-Reliant & Inclusive Communities</h3>
-                    <p>Rural Development Organization (RDO) is a non-profit NGO working to uplift underprivileged communities in rural areas. We bridge the gap by providing access to basic human needs, emergency relief during natural disasters, and sustainable livelihood tools.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check-circle"></i> Community-led development approach</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Focus on women, children, and vulnerable groups</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Commitment to accountability and transparency</li>
-                    </ul>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
-                        <h4>50,000+</h4>
-                        <p>Lives Impacted</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fa-solid fa-faucet-drip"></i>
-                        <h4>200+</h4>
-                        <p>WASH & Water Projects</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About RDO</h2>
+    
+    <div class="badge-container">
+      <p><strong>Official Registration:</strong> Registered under the Societies Registration Act, 1860 (Registration No. 0058) on December 31, 2024[cite: 1]. Fully compliant and registered with the <strong>Sindh Charity Commission</strong>[cite: 1].</p>
+    </div>
 
-    <!-- Key Focus Areas -->
-    <section id="focus-areas" class="focus-areas section-padding bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Core Focus Areas</h2>
-                <p>Addressing critical needs to foster long-term community growth.</p>
-                <div class="line"></div>
-            </div>
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fa-solid fa-graduation-cap card-icon"></i>
-                    <h3>Quality Education</h3>
-                    <p>Establishing community schools, offering scholarships, and raising awareness for child education.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-droplet card-icon"></i>
-                    <h3>WASH & Clean Water</h3>
-                    <p>Installing water pumps, deep wells, and educating remote communities on health & hygiene.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-hospital-user card-icon"></i>
-                    <h3>Basic Healthcare</h3>
-                    <p>Organizing free medical relief camps and maternal health awareness programs in rural areas.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-seedling card-icon"></i>
-                    <h3>Livelihood & Agriculture</h3>
-                    <p>Empowering smallholder farmers, providing skill development, and training rural artisans.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-shield-halved card-icon"></i>
-                    <h3>Disaster Relief</h3>
-                    <p>Emergency food ration distribution, shelter assistance, and flood recovery support.</p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-person-shelter card-icon"></i>
-                    <h3>Women Empowerment</h3>
-                    <p>Vocational training and financial independence initiatives for marginalized rural women.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="grid">
+      <div class="card">
+        <h3>Vision</h3>
+        <p>A prosperous society where people have the right to live with dignity, and all resources are equitably managed and sustained[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>Mission</h3>
+        <p>To facilitate a Non-Political Movement for positive social change and community empowerment through Mass Literacy, Primary Healthcare, and Grassroots Economic Development in rural and urban areas of Pakistan[cite: 1].</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Donation Banner -->
-    <section id="donate" class="donate-banner section-padding">
-        <div class="container">
-            <h2>Your Support Can Change Lives</h2>
-            <p>Every donation directly fuels our clean water projects, healthcare camps, and emergency flood relief initiatives.</p>
-            <a href="#contact" class="btn-primary btn-large">Donate / Partner With Us</a>
-        </div>
-    </section>
+  <!-- Leadership Section -->
+  <section id="leadership" style="background-color: #eef3f1;">
+    <h2 class="section-title">Leadership Messages</h2>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <div class="line"></div>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> House # Head Office, Sindh, Pakistan</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@rdo.org.pk</p>
-                    <p><i class="fa-solid fa-phone"></i> +92 300 1234567</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" action="#" method="POST">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
+    <!-- Executive Director Message -->
+    <div class="card" style="max-width: 850px; margin: 0 auto 2rem auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+        <div style="flex: 1; min-width: 250px;">
+          <img src="ed-photo.jpg" alt="Mr. Yar Muhammad Jamali" style="width: 100%; border-radius: 8px; border: 3px solid var(--primary-color);">
         </div>
-    </section>
+        <div style="flex: 2; min-width: 280px;">
+          <h3>Mr. Yar Muhammad Jamali</h3>
+          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">President & Executive Director</p>
+          <blockquote style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1rem;">
+            "At RDO, we believe sustainable development is only possible when communities actively participate in their own growth. Our commitment is rooted in integrity, mass literacy, and grassroots empowerment to ensure every individual lives with equity and dignity."
+          </blockquote>
+          <p>Under his vision, RDO operates as a non-political platform bridging local community needs with institutional governance, local authorities, and national regulatory compliance[cite: 1].</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Rural Development Organization (RDO). All Rights Reserved.</p>
+    <!-- Chief Operating Officer Message -->
+    <div class="card" style="max-width: 850px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+        <div style="flex: 1; min-width: 250px;">
+          <img src="coo-photo.jpg" alt="Chief Operating Officer" style="width: 100%; border-radius: 8px; border: 3px solid var(--primary-color);">
         </div>
-    </footer>
+        <div style="flex: 2; min-width: 280px;">
+          <h3>[Insert COO Name]</h3>
+          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">Chief Operating Officer (COO)</p>
+          <blockquote style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1rem;">
+            "Our operational strength relies on rigorous policy standards—from PSEA and anti-fraud to transparent procurement and accounting. We ensure that every resource entrusted to RDO directly creates measurable impact on the ground."
+          </blockquote>
+          <p>Overseeing daily management, administration, and program implementation, the COO ensures all grassroots initiatives align with our core governance manuals and UN Sustainable Development Goals[cite: 1].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Areas Section -->
+  <section id="focus">
+    <h2 class="section-title">Core Focus Areas</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Education & Literacy</h3>
+        <p>Promoting mass literacy, youth mentorship, and primary education initiatives for underserved children[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>Healthcare & Protection</h3>
+        <p>Providing access to primary healthcare, child rights protection, and PSEA policy enforcement[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>Empowerment & Climate</h3>
+        <p>Women & youth empowerment, skill development, poverty alleviation, and climate action aligned with UN SDGs[cite: 1].</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section id="donate">
+    <h2 class="section-title">Official Bank Accounts (Donations)</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">For transparent financial management, donations, and grants, support Rural Development Organization (RDO) directly via our official accounts[cite: 1]:</p>
+
+    <div class="bank-card">
+      <h4>Meezan Bank</h4>
+      <p><strong>Branch:</strong> Auto Bhan Branch, Hyderabad[cite: 1]</p>
+      <p><strong>Account Number:</strong> 1606 0115220768[cite: 1]</p>
+      <p><strong>IBAN:</strong> PK81 MEZN 0016 0601 1522 0768[cite: 1]</p>
+    </div>
+
+    <div class="bank-card">
+      <h4>Habib Metropolitan Bank Ltd.</h4>
+      <p><strong>Branch:</strong> Industrial Area Korangi Branch[cite: 1]</p>
+      <p><strong>Account Number:</strong> 6-0[cite: 1]</p>
+      <p><strong>IBAN:</strong> PK59 MPBL 0162 0271 4096 9070[cite: 1]</p>
+    </div>
+
+    <div class="bank-card">
+      <h4>Sindh Bank Limited</h4>
+      <p><strong>Branch:</strong> Autobhan Road Branch, Hyderabad[cite: 1]</p>
+      <p><strong>Account Number:</strong> 0004011822732001[cite: 1]</p>
+      <p><strong>IBAN:</strong> PK97 SIND 0004 0118 2273 2001[cite: 1]</p>
+    </div>
+
+    <div class="bank-card">
+      <h4>First Women Bank Ltd.</h4>
+      <p><strong>Branch:</strong> Hyderabad Branch (Faraz Villa, Phase-1, Qasimabad)[cite: 1]</p>
+      <p><strong>Account Number:</strong> 0017027260510000[cite: 1]</p>
+      <p><strong>IBAN:</strong> PK32 FWOM 0017 0272 6051 0000[cite: 1]</p>
+    </div>
+
+    <div class="bank-card">
+      <h4>MCB Bank Limited</h4>
+      <p><strong>Branch:</strong> Naseer Chamber Complex, Qasimabad, Hyderabad[cite: 1]</p>
+      <p><strong>Account Number:</strong> 1687 5266 6101 0484[cite: 1]</p>
+      <p><strong>IBAN:</strong> PK03 MUCB 1687 5266 6101 0484[cite: 1]</p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" style="background-color: #eef3f1;">
+    <h2 class="section-title">Contact & Message Us</h2>
+    
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <p><strong>Address:</strong> Bungalow No. 106, Revenue Employees Cooperative Housing Society, Qasimabad, Hyderabad, Sindh, Pakistan[cite: 1].</p>
+      <p><strong>Email:</strong> info.rdo58@gmail.com | <strong>Phone:</strong> +92 333 3449301[cite: 1]</p>
+    </div>
+
+    <!-- Replace action URL with your Formspree or Web3Forms key -->
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+      </div>
+      <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Rural Development Organization (RDO). All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
