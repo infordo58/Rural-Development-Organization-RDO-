@@ -299,10 +299,11 @@
     </div>
   </section>
 
-        <!-- Donate Section -->
+  
+  <!-- Donate Section -->
   <section id="donate">
     <h2 class="section-title">Support Our Cause (Direct Bank Transfer)</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then click below to send your donation details directly to our official WhatsApp.</p>
+    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then submit your donation details to generate a direct email.</p>
 
     <!-- Interactive Donation Container -->
     <div style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); max-width: 750px; margin: 0 auto;">
@@ -329,9 +330,9 @@
         <p><strong>IBAN:</strong> <span id="displayIban"></span></p>
       </div>
 
-      <!-- Donation Form Sending via WhatsApp -->
-      <form onsubmit="sendToWhatsApp(event)" style="box-shadow: none; padding: 0;">
-        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Enter Your Donation Details & Send via WhatsApp</h4>
+      <!-- Donation Form Sending via Mailto -->
+      <form onsubmit="sendViaEmail(event)" style="box-shadow: none; padding: 0;">
+        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Enter Your Donation Details & Send Email</h4>
 
         <div class="form-group">
           <label for="donorName">Full Name</label>
@@ -371,13 +372,13 @@
           <input type="text" id="transactionRef" placeholder="Enter bank transaction reference ID if paid">
         </div>
 
-        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem; background-color: #25d366;">Send Donation Notification via WhatsApp</button>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Generate & Send Donation Email</button>
       </form>
 
     </div>
   </section>
 
-  <!-- JavaScript for Dynamic Bank Switching & WhatsApp Integration -->
+  <!-- JavaScript for Dynamic Bank Switching & Email Generation -->
   <script>
     const bankData = {
       "Meezan Bank": {
@@ -424,7 +425,7 @@
       }
     }
 
-    function sendToWhatsApp(event) {
+    function sendViaEmail(event) {
       event.preventDefault();
 
       if (!selectedBankName) {
@@ -439,22 +440,22 @@
       const purpose = document.getElementById("fundPurpose").value;
       const txRef = document.getElementById("transactionRef").value || "N/A";
 
-      const whatsappNumber = "923333449301"; // RDO official phone number
+      const recipientEmail = "info.rdo58@gmail.com";
+      const subject = encodeURIComponent("New Donation Notification - " + name);
+      const body = encodeURIComponent(
+        "New Donation Notification - RDO\n\n" +
+        "Bank Selected: " + selectedBankName + "\n" +
+        "Donor Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone/WhatsApp: " + phone + "\n" +
+        "Amount: " + amount + " PKR\n" +
+        "Purpose: " + purpose + "\n" +
+        "Transaction ID: " + txRef
+      );
 
-      const message = `*New Donation Notification - RDO*%0A` +
-                      `-----------------------------------%0A` +
-                      `*Bank Selected:* ${selectedBankName}%0A` +
-                      `*Donor Name:* ${name}%0A` +
-                      `*Email:* ${email}%0A` +
-                      `*Phone/WhatsApp:* ${phone}%0A` +
-                      `*Amount:* ${amount} PKR%0A` +
-                      `*Purpose:* ${purpose}%0A` +
-                      `*Transaction ID:* ${txRef}`;
-
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+      window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
     }
   </script>
-  
   <!-
   <!-- Contact Form Section -->
   <section id="contact" style="background-color: #eef3f1;">
