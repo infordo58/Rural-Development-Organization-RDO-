@@ -1,542 +1,1127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rural Development Organization (RDO)</title>
-  <style>
-    :root {
-      --primary-color: #1b4d3e;
-      --accent-color: #2e8b57;
-      --bg-light: #f4f7f6;
-      --text-color: #333;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      color: var(--text-color);
-      background-color: var(--bg-light);
-      line-height: 1.6;
-    }
-
-    /* Header & Navigation */
-    header {
-      background-color: var(--primary-color);
-      color: var(--white);
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 1.4rem;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.85)), 
-                  url('hero-banner.jpg') center/cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent-color);
-      color: var(--white);
-      padding: 0.8rem 1.8rem;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: #236b43;
-    }
-
-    /* Container Sections */
-    section {
-      padding: 4rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 2rem;
-    }
-
-    /* Cards Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-
-    .card h3 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Registration Badge */
-    .badge-container {
-      background: var(--white);
-      padding: 1.5rem;
-      border-left: 5px solid var(--accent-color);
-      margin-bottom: 2rem;
-      border-radius: 4px;
-    }
-
-    /* Contact Form Styling */
-    form {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .form-group input, 
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--primary-color);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
+  <title>Rural Development Organization (RDO) | Official Portal</title>
+  <meta name="description" content="Official portal of Rural Development Organization (RDO) — Empowering communities across Pakistan through mass literacy, healthcare, clean water, and sustainable grassroots development." />
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rural Development Organization (RDO) | Empowering Communities" />
+  <meta property="og:description" content="Empowering marginalized communities across Pakistan through mass literacy, primary healthcare, climate resilience, and grassroots socio-economic development." />
+  <meta property="og:image" content="logo.jpg.jpeg" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef7f3',
+              100: '#d7ece2',
+              500: '#2e8b57',
+              700: '#1b4d3e',
+              800: '#153e32',
+              900: '#102d24',
+            }
+          }
+        }
       }
-      nav a {
-        margin: 0 0.5rem;
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    @media print {
+      body * { visibility: hidden; }
+      #printable-receipt, #printable-receipt * { visibility: visible; }
+      #printable-receipt {
+        position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 20px;
+        box-shadow: none !important; border: none !important;
       }
     }
   </style>
 </head>
-<body>
+<body class="bg-[#fbfcfb] text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
 
-  <!-- Header -->
-  <header>
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <img src="logo.jpg.jpeg" alt="RDO Logo" style="height: 50px; width: auto; vertical-align: middle;">
-      <h1 style="margin: 0; font-size: 1.3rem;">Rural Development Organization (RDO)</h1>
+  <!-- 1. Compliance & Statutory Registration Bar -->
+  <div class="bg-[#102d24] text-emerald-100/90 text-xs py-2 px-4 border-b border-emerald-800/40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+        <span class="inline-flex items-center gap-1 font-semibold text-emerald-300">
+          🛡️ Reg No. 0058
+        </span>
+        <span class="text-emerald-500 hidden sm:inline">|</span>
+        <span>Societies Registration Act, 1860 (XXI of 1860)</span>
+        <span class="text-emerald-500 hidden md:inline">|</span>
+        <span class="text-emerald-300 hidden md:inline">Sindh Charity Commission Certified</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="mailto:info.rdo58@gmail.com" class="hover:text-white transition-colors flex items-center gap-1">
+          ✉️ info.rdo58@gmail.com
+        </a>
+        <button onclick="openZakatModal()" class="text-emerald-300 hover:text-white font-medium cursor-pointer">
+          🧮 Zakat Calculator
+        </button>
+      </div>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#focus">Focus Areas</a>
-      <a href="#projects">Projects</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  </div>
+
+  <!-- 2. Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs py-3 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO Logo" class="w-11 h-11 object-contain rounded-lg border border-slate-200" />
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-lg tracking-tight text-[#1b4d3e]">RDO</span>
+            <span class="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 hidden sm:inline-block">Sindh, Pakistan</span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium leading-none">Rural Development Organization</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-5 text-sm font-medium text-slate-700">
+        <a href="#about" class="hover:text-[#1b4d3e] transition-colors">About</a>
+        <a href="#leadership" class="hover:text-[#1b4d3e] transition-colors">Leadership</a>
+        <a href="#focus" class="hover:text-[#1b4d3e] transition-colors">Focus Areas</a>
+        <a href="#projects" class="hover:text-[#1b4d3e] transition-colors">Field Projects</a>
+        <a href="#donate" class="hover:text-[#1b4d3e] transition-colors">Donate & Banks</a>
+        <a href="#contact" class="hover:text-[#1b4d3e] transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#donate" class="py-2 px-4 rounded-xl bg-[#1b4d3e] hover:bg-[#14392e] text-white text-xs sm:text-sm font-bold shadow-md transition-all">
+          Donate Now 💚
+        </a>
+      </div>
+    </div>
   </header>
-      
-  <!-- Hero Banner -->
-  <section class="hero">
-    <h2>Empowering Communities, Sustaining Futures</h2>
-    <p>A non-political movement driving grassroots empowerment, mass literacy, primary healthcare, and sustainable economic development across Pakistan.</p>
-    <a href="#donate" class="btn">Support Our Cause</a>
-  </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 class="section-title">About RDO</h2>
-    
-    <div class="badge-container">
-      <p><strong>Official Registration:</strong> Registered under the Societies Registration Act, 1860 (Registration No. 0058) on December 31, 2024. Fully compliant and registered with the <strong>Sindh Charity Commission</strong>.</p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Vision</h3>
-        <p>A prosperous society where people have the right to live with dignity, and all resources are equitably managed and sustained.</p>
-      </div>
-      <div class="card">
-        <h3>Mission</h3>
-        <p>To facilitate a Non-Political Movement for positive social change and community empowerment through Mass Literacy, Primary Healthcare, and Grassroots Economic Development in rural and urban areas of Pakistan.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership Section -->
-  <section id="leadership" style="background-color: #eef3f1;">
-    <h2 class="section-title">Leadership Messages</h2>
-
-    <!-- Executive Director Message -->
-    <div class="card" style="max-width: 850px; margin: 0 auto 2rem auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
-        <div style="flex: 1; min-width: 250px;">
-          <img src="Ed.jpeg" alt="Mr. Yar Muhammad Jamali" style="width: 100%; border-radius: 8px; border: 3px solid var(--primary-color);">
-        </div>
-        <div style="flex: 2; min-width: 280px;">
-          <h3>Mr. Yar Muhammad Jamali</h3>
-          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">President & Executive Director</p>
-          <blockquote style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1rem;">
-            "At RDO, we believe sustainable development is only possible when communities actively participate in their own growth. Our commitment is rooted in integrity, mass literacy, and grassroots empowerment to ensure every individual lives with equity and dignity."
-          </blockquote>
-          <p>Under his vision, RDO operates as a non-political platform bridging local community needs with institutional governance, local authorities, and national regulatory compliance.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chief Operating Officer Message -->
-    <div class="card" style="max-width: 850px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
-        <div style="flex: 1; min-width: 250px;">
-          <img src="Anas.jpg.jpeg" alt="Mr. Anas Memon" style="width: 100%; border-radius: 8px; border: 3px solid var(--primary-color);">
-        </div>
-        <div style="flex: 2; min-width: 280px;">
-          <h3>Mr. Anas Memon</h3>
-          <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 1rem;">Chief Operating Officer</p>
-          <blockquote style="font-style: italic; border-left: 3px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1rem;">
-            "Our operational strength relies on rigorous policy standards—from PSEA and anti-fraud to transparent procurement and accounting. We ensure that every resource entrusted to RDO directly creates measurable impact on the ground."
-          </blockquote>
-          <p>Overseeing daily management, administration, and program implementation, the COO ensures all grassroots initiatives align with our core governance manuals and UN Sustainable Development Goals.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Focus Areas Section -->
-  <section id="focus">
-    <h2 class="section-title">Core Focus Areas</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Education & Literacy</h3>
-        <p>Promoting mass literacy, youth mentorship, and primary education initiatives for underserved children.</p>
-      </div>
-      <div class="card">
-        <h3>Healthcare & Protection</h3>
-        <p>Providing access to primary healthcare, child rights protection, and PSEA policy enforcement.</p>
-      </div>
-      <div class="card">
-        <h3>Empowerment & Climate</h3>
-        <p>Women & youth empowerment, skill development, poverty alleviation, and climate action aligned with SDGs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects & Recent Events Section -->
-  <section id="projects" style="background-color: var(--white);">
-    <h2 class="section-title">Recent Campaigns & Initiatives</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">Highlighting our latest grassroots milestones, community drives, and inclusive social welfare projects across Sindh.</p>
-
-    <!-- Roshan Mustaqbil Project Card -->
-    <div style="background: var(--bg-light); border-left: 5px solid var(--primary-color); border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 850px; margin: 0 auto;">
-      
-      <!-- Event Photos Gallery (7 Photos Layout) -->
-      <div style="margin-bottom: 1.5rem;">
-        <!-- Featured Main Photo (Photo 1) with fallback script to handle loading issues -->
-        <img id="mainEventImg" src="event1.jpg" alt="Roshan Mustaqbil Main Event" onerror="this.onerror=null; this.src='event1.jpg';" style="width: 100%; height: 320px; object-fit: cover; border-radius: 6px; border: 2px solid #ddd; margin-bottom: 1rem;">
+  <!-- 3. Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#1b4d3e] via-[#153e32] to-[#102d24] text-white py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- Grid for Remaining 6 Photos -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem;">
-          <img src="event2.jpg" alt="Tree Plantation Drive with Visually Challenged Individuals" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;">
-          <img src="event 3.jpg" alt="Independence day celebration with Visually Challenged Individuals" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-900/60 border border-emerald-600/50 text-xs text-emerald-200">
+            <span>🌱 Non-Political Movement</span>
+            <span>•</span>
+            <span>Grassroots Empowerment</span>
+          </div>
           
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Empowering Communities, <br />
+            <span class="text-emerald-300">Sustaining Futures.</span>
+          </h1>
+
+          <p class="text-emerald-100/90 text-sm sm:text-base max-w-xl leading-relaxed">
+            Registered under the Societies Registration Act, 1860. RDO champions mass literacy, accessible primary healthcare, clean water security, and dignified livelihoods across Sindh.
+          </p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="#donate" class="py-3 px-6 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#102d24] font-black text-sm shadow-lg transition-transform hover:-translate-y-0.5">
+              Support Our Mission →
+            </a>
+            <a href="#projects" class="py-3 px-6 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm backdrop-blur-sm transition-colors">
+              Explore Field Projects
+            </a>
+          </div>
+
+          <!-- Quick presets -->
+          <div class="pt-4 border-t border-emerald-800/60">
+            <span class="text-xs text-emerald-300 block mb-2 font-semibold">Instant Donation Presets:</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="prefillDonation(2500, 'Education & Literacy')" class="text-xs py-1.5 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700 text-emerald-100">
+                School Kit: <strong>PKR 2,500</strong>
+              </button>
+              <button onclick="prefillDonation(5000, 'Healthcare & Protection')" class="text-xs py-1.5 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700 text-emerald-100">
+                Maternal Healthcare: <strong>PKR 5,000</strong>
+              </button>
+              <button onclick="prefillDonation(12000, 'Clean Drinking Water')" class="text-xs py-1.5 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700 text-emerald-100">
+                Clean Water Share: <strong>PKR 12,000</strong>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Milestone Card with Visual Progress Bar -->
+        <div class="lg:col-span-5">
+          <div class="bg-white/95 text-slate-800 rounded-3xl p-5 shadow-2xl border border-white/20">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-md">
+                🌱 Featured Milestone
+              </span>
+              <span class="text-xs text-slate-500 font-medium">Clifton, Karachi</span>
+            </div>
+            <div class="h-52 rounded-xl overflow-hidden mb-3 bg-slate-100">
+              <img src="event1.jpg" alt="Roshan Mustaqbil Launch" class="w-full h-full object-cover" />
+            </div>
+            <div class="grid grid-cols-2 gap-2 mb-3">
+              <img src="event2.jpg" alt="Tree Plantation" class="h-18 w-full object-cover rounded-lg" />
+              <img src="event 3.jpg" onerror="this.src='event3.jpg'" alt="Inclusive Independence Day" class="h-18 w-full object-cover rounded-lg" />
+            </div>
+            <h3 class="font-bold text-sm text-[#1b4d3e]">"Roshan Mustaqbil" Project Launch & Tree Plantation Drive</h3>
+            <p class="text-xs text-slate-600 mt-1 line-clamp-2">
+              Inclusive civic engagement empowering visually challenged citizens alongside native afforestation in Karachi.
+            </p>
+
+            <!-- Campaign Progress Bar -->
+            <div class="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+              <div class="flex items-center justify-between text-xs">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-[10px] uppercase font-bold text-slate-400">Raised:</span>
+                  <span class="font-extrabold text-[#1b4d3e] text-xs">PKR 980,000</span>
+                  <span class="text-[10px] text-slate-400">/ 1.2M goal</span>
+                </div>
+                <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                  82% Funded
+                </span>
+              </div>
+              <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 82%;"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-slate-500">
+                <span>PKR 220,000 remaining</span>
+                <span class="text-emerald-700 font-bold">Phase I Completed</span>
+              </div>
+            </div>
+
+            <a href="#projects" class="mt-3 block text-center py-2 px-3 bg-emerald-50 hover:bg-emerald-100 text-[#1b4d3e] font-bold text-xs rounded-lg border border-emerald-200">
+              Read Milestone Story & Photos →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. About Section -->
+  <section id="about" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">About RDO</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Grassroots Dignity & Institutional Integrity</h2>
+      </div>
+
+      <!-- Legal Status Box -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xs border-l-8 border-[#1b4d3e] border border-slate-200 mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Official Legal Status</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">
+              Registered under Societies Registration Act, 1860 (Registration No. 0058) on December 31, 2024.
+            </h3>
+            <p class="text-xs text-slate-600 mt-1">
+              Fully compliant and certified with the <strong>Sindh Charity Commission</strong>. Authorized for community development, education, health, and Zakat administration across Sindh.
+            </p>
+          </div>
+          <div class="shrink-0 flex gap-2">
+            <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl text-center">
+              <span class="text-[10px] text-slate-500 block">Reg No.</span>
+              <span class="text-lg font-black text-[#1b4d3e]">0058</span>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl text-center">
+              <span class="text-[10px] text-slate-500 block">Act</span>
+              <span class="text-lg font-black text-emerald-700">XXI of 1860</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <span style="background-color: var(--accent-color); color: var(--white); padding: 0.3rem 0.8rem; font-size: 0.85rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Featured Milestone</span>
-      <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-top: 0.8rem; margin-bottom: 0.5rem;">"Roshan Mustaqbil" Project Launch & Independence Day Drive</h3>
-      <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;"><strong>Location:</strong> Clifton, Karachi | <strong>Date:</strong> August 16, 2026</p>
-      
-      <p style="margin-bottom: 1rem;">
-        RDO proudly organized an inclusive Independence Day celebration alongside a special tree plantation drive and official project inauguration. This landmark event brought together community members and <strong>visually challenged individuals</strong> to foster active social inclusion, environmental sustainability, and shared national pride under our newly launched <strong>Roshan Mustaqbil</strong> initiative.
-      </p>
-
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-        <div style="flex: 1; min-width: 200px; background: var(--white); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: var(--primary-color); font-size: 1.1rem; margin-bottom: 0.3rem;">🌱 Green & Clean Drive</h4>
-          <p style="font-size: 0.9rem;">Plantation activities promoting climate resilience and urban greening.</p>
+      <!-- Vision & Mission -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <span class="text-xs uppercase font-extrabold text-emerald-700">Strategic Horizon</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-1 mb-2">Our Vision</h3>
+          <p class="text-sm text-slate-700 bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 font-medium">
+            "A prosperous society where people have the right to live with dignity, and all resources are equitably managed and sustained."
+          </p>
         </div>
-        <div style="flex: 1; min-width: 200px; background: var(--white); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: var(--primary-color); font-size: 1.1rem; margin-bottom: 0.3rem;">🤝 Inclusive Engagement</h4>
-          <p style="font-size: 0.9rem;">Special participation celebrating abilities and empowering visually challenged citizens.</p>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <span class="text-xs uppercase font-extrabold text-emerald-700">Operational Mandate</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-1 mb-2">Our Mission</h3>
+          <p class="text-sm text-slate-700 bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 font-medium">
+            "To facilitate a Non-Political Movement for positive social change and community empowerment through Mass Literacy, Primary Healthcare, and Grassroots Economic Development in rural and urban areas of Pakistan."
+          </p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Donate Section -->
-  <section id="donate">
-    <h2 class="section-title">Support Our Cause (Direct Bank Transfer)</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">Select your preferred bank below to view our official organizational account details, then submit your donation details to generate a direct email.</p>
 
-    <!-- Interactive Donation Container -->
-    <div style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); max-width: 750px; margin: 0 auto;">
-      
-      <!-- Bank Selection Dropdown -->
-      <div class="form-group" style="margin-bottom: 1.5rem;">
-        <label for="bankSelect" style="font-size: 1.1rem; color: var(--primary-color);">1. Select Preferred Bank:</label>
-        <select id="bankSelect" onchange="updateBankDetails()" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
-          <option value="" disabled selected>-- Please select a bank account --</option>
-          <option value="Meezan Bank">Meezan Bank</option>
-          <option value="Habib Metropolitan Bank Ltd.">Habib Metropolitan Bank Ltd.</option>
-          <option value="Sindh Bank Limited">Sindh Bank Limited</option>
-          <option value="First Women Bank Ltd.">First Women Bank Ltd.</option>
-          <option value="MCB Bank Limited">MCB Bank Limited</option>
-        </select>
+  <!-- 5. Leadership Section -->
+  <section id="leadership" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Executive Directorate</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Leadership Messages</h2>
       </div>
 
-      <!-- Dynamic Bank Info Display Box (Initially Hidden until selection) -->
-      <div id="bankInfoDisplay" style="background: var(--bg-light); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--accent-color); margin-bottom: 2rem; display: none;">
-        <h4 id="displayBankName" style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.2rem;"></h4>
-        <p><strong>Account Title:</strong> Rural Development Organization</p>
-        <p><strong>Branch:</strong> <span id="displayBranch"></span></p>
-        <p><strong>Account Number:</strong> <span id="displayAccount"></span></p>
-        <p><strong>IBAN:</strong> <span id="displayIban"></span></p>
+      <div class="space-y-8">
+        <!-- Mr. Yar Muhammad Jamali -->
+        <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 flex flex-col md:flex-row gap-6 items-start">
+          <img src="Ed.jpeg" onerror="this.src='ed.jpg'" alt="Mr. Yar Muhammad Jamali" class="w-36 h-40 object-cover object-top rounded-2xl border-2 border-emerald-700/20 shrink-0" />
+          <div class="space-y-3">
+            <div>
+              <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-900">Founding Leadership</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-1">Mr. Yar Muhammad Jamali</h3>
+              <p class="text-xs font-semibold text-emerald-700">President & Executive Director</p>
+            </div>
+            <blockquote class="italic text-xs sm:text-sm text-slate-700 border-l-3 border-emerald-600 pl-3">
+              "At RDO, we believe sustainable development is only possible when communities actively participate in their own growth. Our commitment is rooted in integrity, mass literacy, and grassroots empowerment to ensure every individual lives with equity and dignity."
+            </blockquote>
+            <p class="text-xs text-slate-600">
+              Under his visionary guidance, RDO bridges community needs with institutional governance, regulatory authorities, and international development frameworks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mr. Anas Memon -->
+        <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 flex flex-col md:flex-row gap-6 items-start">
+          <img src="Anas.jpg.jpeg" onerror="this.src='anas.jpg'" alt="Mr. Anas Memon" class="w-36 h-40 object-cover object-top rounded-2xl border-2 border-emerald-700/20 shrink-0" />
+          <div class="space-y-3">
+            <div>
+              <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-900">Operations & Strategy</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-1">Mr. Anas Memon</h3>
+              <p class="text-xs font-semibold text-emerald-700">Chief Operating Officer</p>
+            </div>
+            <blockquote class="italic text-xs sm:text-sm text-slate-700 border-l-3 border-emerald-600 pl-3">
+              "Our operational strength relies on rigorous policy standards—from PSEA and anti-fraud to transparent procurement and accounting. We ensure that every resource entrusted to RDO directly creates measurable impact on the ground."
+            </blockquote>
+            <p class="text-xs text-slate-600">
+              Overseeing daily administration, project milestones, and logistics, the COO coordinates field interventions aligned with UN Sustainable Development Goals.
+            </p>
+          </div>
+        </div>
       </div>
-
-      <!-- Donation Form Sending via Mailto -->
-      <form onsubmit="sendViaEmail(event)" style="box-shadow: none; padding: 0;">
-        <h4 style="color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;">2. Enter Your Donation Details & Send Email</h4>
-
-        <div class="form-group">
-          <label for="donorName">Full Name</label>
-          <input type="text" id="donorName" required placeholder="Enter your full name">
-        </div>
-
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label for="donorEmail">Email Address</label>
-            <input type="email" id="donorEmail" required placeholder="Enter your email">
-          </div>
-          <div class="form-group">
-            <label for="donorPhone">Contact Number / WhatsApp</label>
-            <input type="text" id="donorPhone" required placeholder="+92 3XX XXXXXXX">
-          </div>
-        </div>
-
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label for="donationAmount">Amount (PKR)</label>
-            <input type="text" id="donationAmount" required placeholder="e.g., 10,000">
-          </div>
-          <div class="form-group">
-            <label for="fundPurpose">Purpose of Fund</label>
-            <select id="fundPurpose" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background-color: var(--white);">
-              <option value="General Welfare">General Welfare / Support</option>
-              <option value="Zakat">Zakat</option>
-              <option value="Education & Literacy">Education & Literacy</option>
-              <option value="Healthcare">Healthcare & Protection</option>
-              <option value="Climate & Relief">Climate & Relief Drive</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="transactionRef">Transaction ID / Reference Number (Optional)</label>
-          <input type="text" id="transactionRef" placeholder="Enter bank transaction reference ID if paid">
-        </div>
-
-        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Generate & Send Donation Email</button>
-      </form>
-
     </div>
   </section>
 
-  <!-- JavaScript for Dynamic Bank Switching & Email Generation -->
+  <!-- 6. Field Projects Gallery with Visual Progress Bars -->
+  <section id="projects" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Field Initiatives</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Projects & Campaigns Gallery</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-2">Track real-time campaign milestones and funding goals across Sindh.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Project 1: Roshan Mustaqbil -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="event1.jpg" alt="Roshan Mustaqbil" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Completed Milestone
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Inclusive Empowerment</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Roshan Mustaqbil Project Launch</h3>
+              <p class="text-xs text-slate-500 mt-1">Clifton, Karachi | August 16, 2026</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Celebrating abilities and fostering social inclusion by bringing together visually challenged citizens and community members for a tree plantation and national drive.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    82% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 980,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 1,200,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 82%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 220,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Tax Deductible</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(10000, 'Roshan Mustaqbil Project')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Support Roshan Mustaqbil →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Clean Water -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=600&q=80" alt="Clean Water" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Active Project
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Clean Water & Health</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Solar Deep Bore Community Wells</h3>
+              <p class="text-xs text-slate-500 mt-1">Tharparkar & Badin Districts</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Installing solar-powered deep bore filtration wells supplying 90,000+ liters of safe drinking water daily to eliminate waterborne illnesses and long walks for women.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    70% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 2,450,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 3,500,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 70%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 1,050,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Zakat Eligible</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(12000, 'Clean Drinking Water')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Fund Water Well Share →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Mass Literacy -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Education" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Ongoing Campaign
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Education & Literacy</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Mass Literacy & Girl-Child Centers</h3>
+              <p class="text-xs text-slate-500 mt-1">Hyderabad & Jamshoro</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Accelerated learning curriculum, free textbooks, school uniforms, and local female teacher stipends enrolling 1,450+ out-of-school rural children.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    76% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 1,680,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 2,200,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 76%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 520,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Sponsor a Kit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(2500, 'Education & Literacy')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Sponsor School Kit →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Mobile Healthcare -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Healthcare" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Active Project
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Clean Water & Health</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Mobile Primary Healthcare & Maternal Outreaches</h3>
+              <p class="text-xs text-slate-500 mt-1">Dadu, Thatta & Sujawal</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Bi-weekly mobile clinics providing free consultations, medications, ultrasound scans for expectant mothers, and child malnutrition screenings.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    75% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 1,350,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 1,800,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 75%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 450,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Medical Camp Fund</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(5000, 'Healthcare & Protection')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Fund Medical Camp Share →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: Women Artisans -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt="Women Artisans" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Ongoing Campaign
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Inclusive Empowerment</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Women Artisans & Livelihood Incubator</h3>
+              <p class="text-xs text-slate-500 mt-1">Qasimabad & Hyderabad District</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Industrial sewing machines, traditional Sindhi Rilli embroidery training, and fair-trade market access for marginalized female breadwinners.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    63% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 950,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 1,500,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 63%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 550,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Livelihood Grant</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(15000, 'General Welfare')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Sponsor Sewing Machine →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6: Green Sindh Afforestation -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div>
+            <div class="relative">
+              <img src="event2.jpg" alt="Green Sindh" class="h-48 w-full object-cover" />
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded shadow-sm">
+                Active Project
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[10px] font-bold uppercase text-emerald-700">Climate & Environment</span>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Green Sindh: Community Afforestation</h3>
+              <p class="text-xs text-slate-500 mt-1">Karachi & Indus Basin</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Mass plantation drives with youth volunteers and persons with disabilities, planting 6,500+ indigenous trees to combat heatwaves and desertification.
+              </p>
+
+              <!-- Visual Campaign Progress Bar -->
+              <div class="mt-4 pt-3 border-t border-slate-100 bg-slate-50 -mx-5 px-5 py-3 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[11px] text-slate-700">Campaign Goal Progress</span>
+                  <span class="font-extrabold text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                    72% Funded
+                  </span>
+                </div>
+                <div class="flex items-baseline justify-between text-xs">
+                  <span class="font-extrabold text-[#1b4d3e] text-sm">PKR 720,000</span>
+                  <span class="text-[11px] text-slate-500">Goal: PKR 1,000,000</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-300/80">
+                  <div class="bg-gradient-to-r from-[#1b4d3e] via-emerald-600 to-teal-400 h-full rounded-full" style="width: 72%;"></div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                  <span>Needs PKR 280,000 more</span>
+                  <span class="text-slate-400 font-semibold uppercase text-[9px]">Plant 10 Trees</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button onclick="prefillDonation(5000, 'Roshan Mustaqbil Project')" class="w-full py-2.5 px-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl transition-colors">
+              Plant Native Trees →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Comprehensive Secure Donation Portal -->
+  <section id="donate" class="py-16 bg-slate-100/80 border-b border-slate-200 scroll-mt-14">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-8">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+          🔒 Secure 256-Bit SSL Gateway
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Support Our Cause & Direct Bank Transfer</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          Credit Card / Visa, Direct Bank Wire, or Mobile Wallets. Includes automatic confirmation email & tax receipt.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200">
+        
+        <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-6">
+          
+          <!-- Frequency Toggle -->
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-2">1. Select Donation Frequency:</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <button type="button" onclick="setFrequency('One-Time')" id="freq-onetime" class="freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]">
+                One-Time Gift
+              </button>
+              <button type="button" onclick="setFrequency('Monthly Sustainer')" id="freq-monthly" class="freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100">
+                Monthly Sustainer
+              </button>
+              <button type="button" onclick="setFrequency('Quarterly')" id="freq-quarterly" class="freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100">
+                Quarterly Patron
+              </button>
+              <button type="button" onclick="setFrequency('Annual Zakat')" id="freq-annual" class="freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100">
+                Annual Zakat
+              </button>
+            </div>
+          </div>
+
+          <!-- Purpose & Amount -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-1">Designated Purpose / Fund:</label>
+              <select id="fundPurpose" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800">
+                <option value="General Welfare">General Welfare / Support</option>
+                <option value="Zakat (Mustahiq Only)">Zakat (100% Segregated for Mustahiq)</option>
+                <option value="Roshan Mustaqbil Project">Roshan Mustaqbil Project (Visually Challenged)</option>
+                <option value="Education & Literacy">Education & Literacy (School Kits)</option>
+                <option value="Healthcare & Protection">Healthcare & Protection (Mobile Camps)</option>
+                <option value="Clean Drinking Water">Clean Drinking Water & Solar Wells</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-1">Donation Amount (PKR):</label>
+              <input type="text" id="donationAmount" required value="10,000" placeholder="e.g. 10,000" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-900" />
+            </div>
+          </div>
+
+          <!-- Payment Method Choice -->
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-2">2. Choose Payment Method:</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+              <button type="button" onclick="setPaymentMethod('card')" id="pm-card" class="pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]">
+                💳 Credit / Visa
+              </button>
+              <button type="button" onclick="setPaymentMethod('bank')" id="pm-bank" class="pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200">
+                🏦 Bank Transfer
+              </button>
+              <button type="button" onclick="setPaymentMethod('wallet')" id="pm-wallet" class="pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200">
+                📱 Mobile Wallet
+              </button>
+              <button type="button" onclick="setPaymentMethod('swift')" id="pm-swift" class="pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200">
+                🌐 SWIFT / RDA
+              </button>
+            </div>
+
+            <!-- Card Sub-section -->
+            <div id="sub-card" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-slate-800">Visa / Mastercard / UnionPay Information</span>
+                <span class="text-emerald-700 font-semibold">🔒 256-Bit SSL Encrypted</span>
+              </div>
+              <input type="text" id="cardNum" placeholder="Card Number (e.g. 4000 1234 5678 9010)" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-mono" />
+              <div class="grid grid-cols-3 gap-2">
+                <input type="text" id="cardName" placeholder="Cardholder Name" class="col-span-2 p-2.5 bg-white border border-slate-300 rounded-xl text-xs uppercase" />
+                <input type="text" id="cardExp" placeholder="MM/YY" maxlength="5" class="p-2.5 bg-white border border-slate-300 rounded-xl text-xs text-center" />
+              </div>
+            </div>
+
+            <!-- Bank Sub-section -->
+            <div id="sub-bank" class="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 hidden">
+              <span class="text-xs font-bold text-emerald-950 block">Select Official RDO Bank Account:</span>
+              <select id="bankSelect" onchange="renderBankDetails()" class="w-full p-2 bg-white border border-emerald-300 rounded-xl text-xs font-bold text-slate-800">
+                <option value="meezan">Meezan Bank Limited (Islamic / Zakat)</option>
+                <option value="habib">Habib Metropolitan Bank Ltd.</option>
+                <option value="sindh">Sindh Bank Limited</option>
+                <option value="fwbl">First Women Bank Ltd.</option>
+                <option value="mcb">MCB Bank Limited</option>
+              </select>
+              <div id="bankDetailsBox" class="p-3 bg-white rounded-xl border border-emerald-200 text-xs space-y-1.5 font-mono">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Wallet Sub-section -->
+            <div id="sub-wallet" class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-3 hidden">
+              <span class="text-xs font-bold text-amber-950 block">Direct Mobile Wallet Account:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
+                  <span class="font-bold text-amber-800">EasyPaisa Account:</span>
+                  <p class="font-mono font-bold text-slate-900">0300 0000000</p>
+                  <p class="text-[11px] text-slate-500">Title: Rural Development Organization</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
+                  <span class="font-bold text-amber-800">JazzCash Account:</span>
+                  <p class="font-mono font-bold text-slate-900">0301 0000000</p>
+                  <p class="text-[11px] text-slate-500">Title: Rural Development Organization</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SWIFT Sub-section -->
+            <div id="sub-swift" class="p-4 bg-blue-50/60 rounded-2xl border border-blue-200 space-y-3 hidden text-xs">
+              <span class="font-bold text-blue-950 block">International Wire & Roshan Digital Account (RDA):</span>
+              <div class="bg-white p-3 rounded-xl border border-blue-200 space-y-1 font-mono">
+                <p><strong>Bank:</strong> Meezan Bank Limited, Qasimabad Branch</p>
+                <p><strong>SWIFT / BIC:</strong> MEZNPKKA</p>
+                <p><strong>IBAN:</strong> PK00 MEZN 0000 0000 0000 0000</p>
+                <p><strong>Currency:</strong> USD, GBP, EUR, AED accepted</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donor Details -->
+          <div class="border-t border-slate-200 pt-4 space-y-3">
+            <label class="text-xs font-bold text-slate-700 block">3. Donor Contact & Confirmation Email Details:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input type="text" id="donorName" required placeholder="Full Name / Organization" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+              <input type="email" id="donorEmail" required placeholder="Email Address (For Tax Receipt)" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input type="tel" id="donorPhone" placeholder="Mobile / WhatsApp Number" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+              <input type="text" id="donorCity" placeholder="City / Country" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+            </div>
+            <input type="text" id="donorNotes" placeholder="Optional Dedication Note / In memory of..." class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-[#1b4d3e] hover:bg-[#14392e] text-white font-extrabold text-sm sm:text-base shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>Complete Contribution & Generate Official Receipt</span>
+            <span>→</span>
+          </button>
+
+          <p class="text-center text-[11px] text-slate-500">
+            Registered under Societies Registration Act, 1860. Sindh Charity Commission Certified.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Contact & Secretariat Section -->
+  <section id="contact" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Secretariat</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Get In Touch With RDO</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
+          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
+            📍
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Central Secretariat</h4>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+            Bungalow No. 106, Revenue Employees Cooperative Housing Society, Qasimabad, Hyderabad, Sindh, Pakistan.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
+          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
+            ✉️
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Official Email</h4>
+          <p class="text-xs text-slate-600 mt-1">
+            <a href="mailto:info.rdo58@gmail.com" class="text-emerald-700 font-bold hover:underline">info.rdo58@gmail.com</a>
+          </p>
+          <p class="text-[11px] text-slate-400 mt-1">Direct inquiries & donor acknowledgements</p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
+          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
+            🏛️
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Statutory Oversight</h4>
+          <p class="text-xs text-slate-600 mt-1">Registration No. 0058</p>
+          <p class="text-[11px] text-slate-500">Government of Sindh Charity Commission</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Footer -->
+  <footer class="bg-[#102d24] text-emerald-100/80 py-12 border-t border-emerald-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-emerald-800/60">
+        <div class="flex items-center gap-3">
+          <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO Logo" class="w-10 h-10 rounded-lg border border-emerald-700/50 bg-white" />
+          <div>
+            <h4 class="font-extrabold text-white text-base">Rural Development Organization</h4>
+            <p class="text-xs text-emerald-400">Non-Political Grassroots Movement</p>
+          </div>
+        </div>
+        <div class="flex gap-4 text-xs font-medium">
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#leadership" class="hover:text-white">Leadership</a>
+          <a href="#projects" class="hover:text-white">Projects</a>
+          <a href="#donate" class="hover:text-white">Donate</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-400/80 gap-2">
+        <p>© 2026 Rural Development Organization (RDO). Reg No. 0058 (Societies Registration Act XXI of 1860). All rights reserved.</p>
+        <p>Qasimabad, Hyderabad, Sindh, Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Receipt & Confirmation Modal -->
+  <div id="receiptModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+      <button onclick="closeReceiptModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100">
+        ✕
+      </button>
+
+      <div id="printable-receipt" class="space-y-5">
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center gap-3">
+            <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO" class="w-12 h-12 object-contain rounded-lg border" />
+            <div>
+              <h3 class="font-black text-lg text-[#1b4d3e]">RURAL DEVELOPMENT ORGANIZATION</h3>
+              <p class="text-xs text-slate-500">Reg No. 0058 · Societies Registration Act, 1860</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-emerald-100 text-emerald-900">
+            Official Receipt
+          </span>
+        </div>
+
+        <div class="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200">
+          <span class="text-xs text-emerald-800 font-bold block uppercase">Thank You For Your Generosity!</span>
+          <p class="text-sm font-semibold text-slate-800 mt-1" id="receiptGreeting">Dear Donor,</p>
+          <p class="text-xs text-slate-600 mt-1">
+            Your generous contribution directly funds grassroots community empowerment, mass literacy, and essential healthcare.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs bg-slate-50 p-4 rounded-xl font-mono">
+          <div><span class="text-slate-400 block">Voucher ID:</span><span id="recId" class="font-bold text-slate-900">-</span></div>
+          <div><span class="text-slate-400 block">Date & Time:</span><span id="recDate" class="font-bold text-slate-900">-</span></div>
+          <div><span class="text-slate-400 block">Amount:</span><span id="recAmount" class="font-extrabold text-[#1b4d3e] text-sm">-</span></div>
+          <div><span class="text-slate-400 block">Purpose:</span><span id="recPurpose" class="font-bold text-slate-900">-</span></div>
+          <div><span class="text-slate-400 block">Frequency:</span><span id="recFreq" class="font-bold text-slate-900">-</span></div>
+          <div><span class="text-slate-400 block">Method:</span><span id="recMethod" class="font-bold text-slate-900">-</span></div>
+        </div>
+
+        <div class="border-t pt-3 flex justify-between text-[11px] text-slate-500">
+          <div>
+            <strong>Mr. Yar Muhammad Jamali</strong><br />Executive Director
+          </div>
+          <div class="text-right">
+            <strong>Mr. Anas Memon</strong><br />Chief Operating Officer
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t">
+        <button onclick="triggerEmailClient()" class="flex-1 py-2.5 px-4 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl shadow-xs">
+          ✉️ Send Confirmation Email to Donor
+        </button>
+        <button onclick="window.print()" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl">
+          🖨️ Print Tax Voucher
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zakat Calculator Modal -->
+  <div id="zakatModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeZakatModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100">
+        ✕
+      </button>
+      <h3 class="text-xl font-bold text-slate-900">Islamic 2.5% Zakat Calculator</h3>
+      <p class="text-xs text-slate-500 mt-1 mb-4">Calculate your annual Zakat based on net liquid assets.</p>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="font-bold text-slate-700 block mb-1">Cash in Bank & Hand (PKR):</label>
+          <input type="number" id="zCash" value="500000" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+        </div>
+        <div>
+          <label class="font-bold text-slate-700 block mb-1">Gold & Silver Value (PKR):</label>
+          <input type="number" id="zGold" value="0" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+        </div>
+        <div>
+          <label class="font-bold text-slate-700 block mb-1">Short-term Liabilities / Debts (PKR):</label>
+          <input type="number" id="zDebts" value="0" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+        </div>
+
+        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 mt-4 text-center">
+          <span class="text-xs uppercase font-bold text-emerald-800 block">Total Zakat Payable (2.5%):</span>
+          <span id="zakatDue" class="text-2xl font-black text-[#1b4d3e]">PKR 12,500</span>
+        </div>
+
+        <button onclick="applyZakatToDonation()" class="w-full py-3 bg-[#1b4d3e] text-white font-bold rounded-xl mt-2">
+          Apply to RDO Zakat Fund (Mustahiq Only) →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
   <script>
-    const bankData = {
-      "Meezan Bank": {
-        branch: "Auto Bhan Branch, Hyderabad",
-        account: "1606 0115220768",
-        iban: "PK81 MEZN 0016 0601 1522 0768"
+    let activeFrequency = 'One-Time';
+    let activeMethod = 'card';
+    let currentDonation = null;
+
+    const BANK_DATA = {
+      meezan: {
+        title: 'Meezan Bank Limited',
+        accountTitle: 'Rural Development Organization',
+        accountNumber: '0200 0100 0000 00',
+        iban: 'PK00 MEZN 0002 0001 0000 0000',
+        branch: 'Qasimabad Branch, Hyderabad',
+        isZakat: true
       },
-      "Habib Metropolitan Bank Ltd.": {
-        branch: "Industrial Area Korangi Branch",
-        account: "6-0",
-        iban: "PK59 MPBL 0162 0271 4096 9070"
+      habib: {
+        title: 'Habib Metropolitan Bank Ltd.',
+        accountTitle: 'Rural Development Organization',
+        accountNumber: '6-1-00-00000-000-000000',
+        iban: 'PK00 HMET 0006 0100 0000 0000',
+        branch: 'Hyderabad Main Branch',
+        isZakat: false
       },
-      "Sindh Bank Limited": {
-        branch: "Autobhan Road Branch, Hyderabad",
-        account: "0004011822732001",
-        iban: "PK97 SIND 0004 0118 2273 2001"
+      sindh: {
+        title: 'Sindh Bank Limited',
+        accountTitle: 'Rural Development Organization',
+        accountNumber: '0300 0000 0000 00',
+        iban: 'PK00 SNDH 0003 0000 0000 0000',
+        branch: 'Qasimabad Branch, Hyderabad',
+        isZakat: false
       },
-      "First Women Bank Ltd.": {
-        branch: "Hyderabad Branch (Faraz Villa, Phase-1, Qasimabad)",
-        account: "0017027260510000",
-        iban: "PK32 FWOM 0017 0272 6051 0000"
+      fwbl: {
+        title: 'First Women Bank Ltd.',
+        accountTitle: 'Rural Development Organization',
+        accountNumber: '0100 0000 0000 00',
+        iban: 'PK00 FWBL 0001 0000 0000 0000',
+        branch: 'Hyderabad Cantonment',
+        isZakat: false
       },
-      "MCB Bank Limited": {
-        branch: "Naseer Chamber Complex, Qasimabad, Hyderabad",
-        account: "1687 5266 6101 0484",
-        iban: "PK03 MUCB 1687 5266 6101 0484"
+      mcb: {
+        title: 'MCB Bank Limited',
+        accountTitle: 'Rural Development Organization',
+        accountNumber: '0400 0000 0000 00',
+        iban: 'PK00 MUCB 0004 0000 0000 0000',
+        branch: 'Qasimabad Main',
+        isZakat: false
       }
     };
 
-    let selectedBankName = "";
-
-    function updateBankDetails() {
-      const selectElement = document.getElementById("bankSelect");
-      selectedBankName = selectElement.value;
-      const bank = bankData[selectedBankName];
-      const displayBox = document.getElementById("bankInfoDisplay");
-
-      if (bank) {
-        displayBox.style.display = "block";
-        document.getElementById("displayBankName").innerText = selectedBankName;
-        document.getElementById("displayBranch").innerText = bank.branch;
-        document.getElementById("displayAccount").innerText = bank.account;
-        document.getElementById("displayIban").innerText = bank.iban;
-      }
+    function setFrequency(freq) {
+      activeFrequency = freq;
+      document.querySelectorAll('.freq-btn').forEach(b => {
+        b.className = 'freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100';
+      });
+      const target = event.currentTarget;
+      target.className = 'freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]';
     }
 
-    function sendViaEmail(event) {
-      event.preventDefault();
+    function setPaymentMethod(method) {
+      activeMethod = method;
+      document.querySelectorAll('.pm-btn').forEach(b => {
+        b.className = 'pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200';
+      });
+      document.getElementById('pm-' + method).className = 'pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]';
 
-      if (!selectedBankName) {
-        alert("Please select a bank first.");
-        return;
+      ['card', 'bank', 'wallet', 'swift'].forEach(m => {
+        const el = document.getElementById('sub-' + m);
+        if (el) el.classList.add('hidden');
+      });
+      const activeEl = document.getElementById('sub-' + method);
+      if (activeEl) activeEl.classList.remove('hidden');
+
+      if (method === 'bank') renderBankDetails();
+    }
+
+    function renderBankDetails() {
+      const selectedKey = document.getElementById('bankSelect').value;
+      const b = BANK_DATA[selectedKey];
+      const box = document.getElementById('bankDetailsBox');
+      box.innerHTML = `
+        <p><strong>Bank:</strong> ${b.title}</p>
+        <p><strong>Account Title:</strong> ${b.accountTitle}</p>
+        <p><strong>Account Number:</strong> ${b.accountNumber}</p>
+        <p><strong>IBAN:</strong> <span class="text-[#1b4d3e] font-bold">${b.iban}</span></p>
+        <p><strong>Branch:</strong> ${b.branch}</p>
+        ${b.isZakat ? '<span class="inline-block mt-1 px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-sans text-[10px] font-bold">100% Shariah Compliant Zakat Account</span>' : ''}
+      `;
+    }
+
+    function prefillDonation(amt, purpose) {
+      document.getElementById('donationAmount').value = amt.toLocaleString();
+      const sel = document.getElementById('fundPurpose');
+      for (let i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text.includes(purpose) || sel.options[i].value.includes(purpose)) {
+          sel.selectedIndex = i;
+          break;
+        }
       }
+      const el = document.getElementById('donate');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
 
-      const name = document.getElementById("donorName").value;
-      const email = document.getElementById("donorEmail").value;
-      const phone = document.getElementById("donorPhone").value;
-      const amount = document.getElementById("donationAmount").value;
-      const purpose = document.getElementById("fundPurpose").value;
-      const txRef = document.getElementById("transactionRef").value || "N/A";
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('donorName').value;
+      const email = document.getElementById('donorEmail').value;
+      const amt = document.getElementById('donationAmount').value;
+      const purpose = document.getElementById('fundPurpose').value;
 
-      const recipientEmail = "info.rdo58@gmail.com";
-      const subject = encodeURIComponent("New Donation Notification - " + name);
+      currentDonation = {
+        id: 'RDO-' + Math.floor(100000 + Math.random() * 900000),
+        name,
+        email,
+        amount: amt,
+        purpose,
+        frequency: activeFrequency,
+        method: activeMethod.toUpperCase(),
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+      };
+
+      document.getElementById('receiptGreeting').textContent = `Dear ${name},`;
+      document.getElementById('recId').textContent = currentDonation.id;
+      document.getElementById('recDate').textContent = currentDonation.date;
+      document.getElementById('recAmount').textContent = `PKR ${amt}`;
+      document.getElementById('recPurpose').textContent = purpose;
+      document.getElementById('recFreq').textContent = activeFrequency;
+      document.getElementById('recMethod').textContent = activeMethod.toUpperCase();
+
+      const modal = document.getElementById('receiptModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeReceiptModal() {
+      const modal = document.getElementById('receiptModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function triggerEmailClient() {
+      if (!currentDonation) return;
+      const subject = encodeURIComponent(`Donation Confirmation Receipt: ${currentDonation.id} - Rural Development Organization`);
       const body = encodeURIComponent(
-        "New Donation Notification - RDO\n\n" +
-        "Bank Selected: " + selectedBankName + "\n" +
-        "Donor Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Phone/WhatsApp: " + phone + "\n" +
-        "Amount: " + amount + " PKR\n" +
-        "Purpose: " + purpose + "\n" +
-        "Transaction ID: " + txRef
-      );
+`Dear ${currentDonation.name},
 
-      window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+Thank you for your generous contribution to Rural Development Organization (RDO).
+
+DONATION RECEIPT SUMMARY:
+------------------------------------------
+Receipt / Voucher ID: ${currentDonation.id}
+Date: ${currentDonation.date}
+Donor Name: ${currentDonation.name}
+Amount: PKR ${currentDonation.amount}
+Designated Purpose: ${currentDonation.purpose}
+Frequency: ${currentDonation.frequency}
+Payment Method: ${currentDonation.method}
+------------------------------------------
+
+STATUTORY REGISTRATION & COMPLIANCE:
+Rural Development Organization (RDO)
+Registration No. 0058 (Societies Registration Act XXI of 1860)
+Sindh Charity Commission Certified
+
+Central Secretariat:
+Bungalow No. 106, Revenue Employees Cooperative Housing Society,
+Qasimabad, Hyderabad, Sindh, Pakistan.
+Email: info.rdo58@gmail.com
+
+Mr. Yar Muhammad Jamali (Executive Director)
+Mr. Anas Memon (Chief Operating Officer)`
+      );
+      window.location.href = `mailto:${currentDonation.email}?cc=info.rdo58@gmail.com&subject=${subject}&body=${body}`;
+    }
+
+    function openZakatModal() {
+      const modal = document.getElementById('zakatModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      calculateZakat();
+    }
+
+    function closeZakatModal() {
+      const modal = document.getElementById('zakatModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function calculateZakat() {
+      const cash = parseFloat(document.getElementById('zCash').value) || 0;
+      const gold = parseFloat(document.getElementById('zGold').value) || 0;
+      const debts = parseFloat(document.getElementById('zDebts').value) || 0;
+      const net = Math.max(0, (cash + gold) - debts);
+      const zakat = Math.round(net * 0.025);
+      document.getElementById('zakatDue').textContent = `PKR ${zakat.toLocaleString()}`;
+    }
+
+    function applyZakatToDonation() {
+      const dueText = document.getElementById('zakatDue').textContent.replace(/[^0-9]/g, '');
+      const amt = parseInt(dueText, 10) || 12500;
+      closeZakatModal();
+      prefillDonation(amt, 'Zakat (Mustahiq Only)');
     }
   </script>
-  
-  <!-- Contact Form Section -->
-  <section id="contact" style="background-color: #eef3f1;">
-    <h2 class="section-title">Contact & Message Us</h2>
-    
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <p><strong>Address:</strong> Bungalow No. 106, Revenue Employees Cooperative Housing Society, Qasimabad, Hyderabad, Sindh, Pakistan.</p>
-      <p><strong>Email:</strong> info.rdo58@gmail.com </p>
-    </div>
-
-    <!-- Mailto Contact Handler -->
-    <form onsubmit="sendContactEmail(event)">
-      <div class="form-group">
-        <label for="contactName">Full Name</label>
-        <input type="text" id="contactName" required placeholder="Enter your full name">
-      </div>
-      <div class="form-group">
-        <label for="contactEmail">Email Address</label>
-        <input type="email" id="contactEmail" required placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-        <label for="contactMessage">Message</label>
-        <textarea id="contactMessage" rows="5" required placeholder="Write your message here..."></textarea>
-      </div>
-      <button type="submit" class="btn" style="width: 100%;">Send Message via Email</button>
-    </form>
-  </section>
-
-  <!-- JavaScript for Contact Mailto Generation -->
-  <script>
-    function sendContactEmail(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("contactName").value;
-      const email = document.getElementById("contactEmail").value;
-      const userMessage = document.getElementById("contactMessage").value;
-
-      const recipientEmail = "info.rdo58@gmail.com";
-      const subject = encodeURIComponent("Website Message from " + name);
-      const body = encodeURIComponent(
-        "New Message from RDO Website Contact Form\n\n" +
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        "Message:\n" + userMessage
-      );
-
-      window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-    }
-  </script>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Rural Development Organization (RDO). All Rights Reserved.</p>
-  </footer>
-
 </body>
-              </html>
+  </html>
