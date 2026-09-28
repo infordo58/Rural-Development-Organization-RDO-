@@ -52,7 +52,7 @@
 </head>
 <body class="bg-[#fbfcfb] text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
 
-  <!-- 1. Compliance & Statutory Registration Bar -->
+  <!-- 1. Top Compliance & Registration Notice Bar -->
   <div class="bg-[#102d24] text-emerald-100/90 text-xs py-2 px-4 border-b border-emerald-800/40">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
@@ -78,6 +78,7 @@
   <!-- 2. Sticky Navigation Header -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs py-3 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <!-- Logo & Identity -->
       <a href="#" class="flex items-center gap-3">
         <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO Logo" class="w-11 h-11 object-contain rounded-lg border border-slate-200" />
         <div>
@@ -90,7 +91,7 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center space-x-5 text-sm font-medium text-slate-700">
+      <nav class="hidden lg:flex items-center space-x-4 text-sm font-medium text-slate-700">
         <a href="#about" class="hover:text-[#1b4d3e] transition-colors">About</a>
         <a href="#leadership" class="hover:text-[#1b4d3e] transition-colors">Leadership</a>
         <a href="#focus" class="hover:text-[#1b4d3e] transition-colors">Focus Areas</a>
@@ -99,50 +100,50 @@
         <a href="#contact" class="hover:text-[#1b4d3e] transition-colors">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="#donate" class="py-2 px-4 rounded-xl bg-[#1b4d3e] hover:bg-[#14392e] text-white text-xs sm:text-sm font-bold shadow-md transition-all">
-          Donate Now 💚
+      <!-- Action CTAs -->
+      <div class="flex items-center gap-2">
+        <button onclick="openZakatModal()" class="hidden sm:flex text-xs font-semibold px-3 py-2 text-slate-700 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+          🧮 Zakat Tool
+        </button>
+        <a href="#donate" class="inline-flex items-center gap-1.5 bg-[#1b4d3e] hover:bg-[#14392e] text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-all">
+          ❤️ Donate Now
         </a>
       </div>
     </div>
   </header>
 
   <!-- 3. Hero Section -->
-  <section class="relative bg-gradient-to-b from-[#1b4d3e] via-[#153e32] to-[#102d24] text-white py-16 lg:py-24">
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#103429] via-[#164436] to-[#1c5040] text-white py-14 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-900/60 border border-emerald-600/50 text-xs text-emerald-200">
-            <span>🌱 Non-Political Movement</span>
-            <span>•</span>
-            <span>Grassroots Empowerment</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-800/60 border border-emerald-500/30 text-emerald-200 text-xs font-medium">
+            🛡️ Registered Society No. 0058 · Sindh Charity Commission
           </div>
-          
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-            Empowering Communities, <br />
-            <span class="text-emerald-300">Sustaining Futures.</span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            Empowering Communities,<br />
+            <span class="text-emerald-300 underline decoration-emerald-500/50 decoration-wavy">Sustaining Futures.</span>
           </h1>
-
-          <p class="text-emerald-100/90 text-sm sm:text-base max-w-xl leading-relaxed">
-            Registered under the Societies Registration Act, 1860. RDO champions mass literacy, accessible primary healthcare, clean water security, and dignified livelihoods across Sindh.
+          <p class="text-base sm:text-lg text-emerald-100/90 max-w-2xl leading-relaxed">
+            A registered non-political movement driving grassroots empowerment, mass literacy, primary healthcare, clean water access, and sustainable economic dignity across marginalized rural communities of Pakistan.
           </p>
 
           <div class="flex flex-wrap gap-3 pt-2">
-            <a href="#donate" class="py-3 px-6 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-[#102d24] font-black text-sm shadow-lg transition-transform hover:-translate-y-0.5">
-              Support Our Mission →
+            <a href="#donate" class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all text-sm">
+              ❤️ Support Our Cause
             </a>
-            <a href="#projects" class="py-3 px-6 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm backdrop-blur-sm transition-colors">
-              Explore Field Projects
+            <a href="#projects" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-all text-sm">
+              View Field Projects
             </a>
           </div>
 
-          <!-- Quick presets -->
+          <!-- Quick Donation Shortcuts -->
           <div class="pt-4 border-t border-emerald-800/60">
-            <span class="text-xs text-emerald-300 block mb-2 font-semibold">Instant Donation Presets:</span>
+            <p class="text-xs uppercase tracking-wider text-emerald-300 font-bold mb-2">⚡ Quick Donation Pledges:</p>
             <div class="flex flex-wrap gap-2">
               <button onclick="prefillDonation(2500, 'Education & Literacy')" class="text-xs py-1.5 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700 text-emerald-100">
-                School Kit: <strong>PKR 2,500</strong>
+                Child Education Kit: <strong>PKR 2,500</strong>
               </button>
               <button onclick="prefillDonation(5000, 'Healthcare & Protection')" class="text-xs py-1.5 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700 text-emerald-100">
                 Maternal Healthcare: <strong>PKR 5,000</strong>
@@ -154,7 +155,7 @@
           </div>
         </div>
 
-        <!-- Featured Milestone Card with Visual Progress Bar -->
+        <!-- Featured Milestone Event Preview with Visual Progress Bar -->
         <div class="lg:col-span-5">
           <div class="bg-white/95 text-slate-800 rounded-3xl p-5 shadow-2xl border border-white/20">
             <div class="flex items-center justify-between mb-3">
@@ -313,11 +314,9 @@
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Field Initiatives</span>
         <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Projects & Campaigns Gallery</h2>
-        <p class="text-xs sm:text-sm text-slate-600 mt-2">Track real-time campaign milestones and funding goals across Sindh.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
         <!-- Project 1: Roshan Mustaqbil -->
         <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-shadow">
           <div>
@@ -593,7 +592,6 @@
             </button>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -672,199 +670,137 @@
               </button>
             </div>
 
-            <!-- Card Sub-section -->
-            <div id="sub-card" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-bold text-slate-800">Visa / Mastercard / UnionPay Information</span>
-                <span class="text-emerald-700 font-semibold">🔒 256-Bit SSL Encrypted</span>
+            <!-- Secure Bank Gateway & 1Link / Card Checkout (PCI-DSS Compliant) -->
+            <div id="sub-card" class="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="p-2 bg-[#1b4d3e] text-white rounded-xl shrink-0 mt-0.5">
+                  🛡️
+                </div>
+                <div class="space-y-1 text-xs">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-bold text-slate-900">Certified Online Payment Gateway & 1Link Switch</span>
+                    <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                      PCI-DSS Level 1 Secure
+                    </span>
+                  </div>
+                  <p class="text-slate-600 leading-relaxed">
+                    <strong>Zero Insecure Storage Policy:</strong> For donor safety and strict compliance with the State Bank of Pakistan (SBP) & global PCI-DSS regulations, <strong>RDO does not collect or store credit card numbers, CVVs, or cardholder credentials on this website</strong>.
+                  </p>
+                </div>
               </div>
-              <input type="text" id="cardNum" placeholder="Card Number (e.g. 4000 1234 5678 9010)" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-mono" />
-              <div class="grid grid-cols-3 gap-2">
-                <input type="text" id="cardName" placeholder="Cardholder Name" class="col-span-2 p-2.5 bg-white border border-slate-300 rounded-xl text-xs uppercase" />
-                <input type="text" id="cardExp" placeholder="MM/YY" maxlength="5" class="p-2.5 bg-white border border-slate-300 rounded-xl text-xs text-center" />
+
+              <div class="p-3 bg-white rounded-xl border border-emerald-100 text-xs text-slate-600 space-y-1.5">
+                <span class="font-bold text-[#1b4d3e] block">Supported Online Payment Rails:</span>
+                <p class="text-[11px] text-slate-500">
+                  Visa, Mastercard, UnionPay, 1Link (PayFast / Kuickpay), and authorized Pakistani internet banking portals with 3D-Secure 2.0 authentication.
+                </p>
+                <p class="text-[11px] text-slate-700 font-semibold pt-1">
+                  ✓ Completing your pledge below generates your official statutory voucher and receipt immediately.
+                </p>
               </div>
             </div>
 
             <!-- Bank Sub-section -->
             <div id="sub-bank" class="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 hidden">
-              <span class="text-xs font-bold text-emerald-950 block">Select Official RDO Bank Account:</span>
-              <select id="bankSelect" onchange="renderBankDetails()" class="w-full p-2 bg-white border border-emerald-300 rounded-xl text-xs font-bold text-slate-800">
-                <option value="meezan">Meezan Bank Limited (Islamic / Zakat)</option>
-                <option value="habib">Habib Metropolitan Bank Ltd.</option>
-                <option value="sindh">Sindh Bank Limited</option>
-                <option value="fwbl">First Women Bank Ltd.</option>
-                <option value="mcb">MCB Bank Limited</option>
+              <label class="text-xs font-bold text-slate-700 block">Select Official Depository Bank:</label>
+              <select id="bankSelect" onchange="updateBankInfo()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-semibold">
+                <option value="Meezan Bank">Meezan Bank (Auto Bhan Branch, Hyderabad)</option>
+                <option value="Habib Metropolitan Bank Ltd.">Habib Metropolitan Bank Ltd. (Korangi Branch)</option>
+                <option value="Sindh Bank Limited">Sindh Bank Limited (Autobhan Road, Hyderabad)</option>
+                <option value="First Women Bank Ltd.">First Women Bank Ltd. (Qasimabad, Hyderabad)</option>
+                <option value="MCB Bank Limited">MCB Bank Limited (Qasimabad, Hyderabad)</option>
               </select>
-              <div id="bankDetailsBox" class="p-3 bg-white rounded-xl border border-emerald-200 text-xs space-y-1.5 font-mono">
-                <!-- Injected dynamically -->
+              <div id="bankDetailsDisplay" class="p-3 bg-white rounded-xl border border-emerald-200 text-xs text-slate-700 space-y-1">
+                <p><strong>Title:</strong> Rural Development Organization</p>
+                <p><strong>Account:</strong> <span id="displayAccount" class="font-mono font-bold">1606 0115220768</span></p>
+                <p><strong>IBAN:</strong> <span id="displayIban" class="font-mono font-bold text-emerald-800">PK81 MEZN 0016 0601 1522 0768</span></p>
               </div>
             </div>
 
             <!-- Wallet Sub-section -->
-            <div id="sub-wallet" class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-3 hidden">
-              <span class="text-xs font-bold text-amber-950 block">Direct Mobile Wallet Account:</span>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
-                  <span class="font-bold text-amber-800">EasyPaisa Account:</span>
-                  <p class="font-mono font-bold text-slate-900">0300 0000000</p>
-                  <p class="text-[11px] text-slate-500">Title: Rural Development Organization</p>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-1">
-                  <span class="font-bold text-amber-800">JazzCash Account:</span>
-                  <p class="font-mono font-bold text-slate-900">0301 0000000</p>
-                  <p class="text-[11px] text-slate-500">Title: Rural Development Organization</p>
-                </div>
-              </div>
+            <div id="sub-wallet" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-2 hidden">
+              <span class="font-bold text-slate-800 block">EasyPaisa & JazzCash Direct Transfer:</span>
+              <p>Account Title: <strong>Rural Development Organization</strong></p>
+              <p>Merchant / Account Number: <strong class="font-mono text-emerald-800">0300 0000000</strong></p>
+              <p class="text-slate-500">Send via mobile app and enter the Transaction ID (TID) below.</p>
             </div>
 
             <!-- SWIFT Sub-section -->
-            <div id="sub-swift" class="p-4 bg-blue-50/60 rounded-2xl border border-blue-200 space-y-3 hidden text-xs">
-              <span class="font-bold text-blue-950 block">International Wire & Roshan Digital Account (RDA):</span>
-              <div class="bg-white p-3 rounded-xl border border-blue-200 space-y-1 font-mono">
-                <p><strong>Bank:</strong> Meezan Bank Limited, Qasimabad Branch</p>
-                <p><strong>SWIFT / BIC:</strong> MEZNPKKA</p>
-                <p><strong>IBAN:</strong> PK00 MEZN 0000 0000 0000 0000</p>
-                <p><strong>Currency:</strong> USD, GBP, EUR, AED accepted</p>
-              </div>
+            <div id="sub-swift" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-2 hidden">
+              <span class="font-bold text-slate-800 block">International Wire & Roshan Digital Accounts:</span>
+              <p>SWIFT/BIC: <strong class="font-mono text-emerald-800">MEZNPKKA</strong> (Meezan Bank Ltd)</p>
+              <p>IBAN: <strong class="font-mono text-emerald-800">PK81 MEZN 0016 0601 1522 0768</strong></p>
             </div>
           </div>
 
           <!-- Donor Details -->
-          <div class="border-t border-slate-200 pt-4 space-y-3">
-            <label class="text-xs font-bold text-slate-700 block">3. Donor Contact & Confirmation Email Details:</label>
+          <div class="pt-4 border-t border-slate-200 space-y-3">
+            <label class="text-xs font-bold text-slate-700 block">3. Donor Contact & Confirmation Destination:</label>
+            <input type="text" id="donorName" required placeholder="Full Name (for official tax receipt)" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input type="text" id="donorName" required placeholder="Full Name / Organization" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
-              <input type="email" id="donorEmail" required placeholder="Email Address (For Tax Receipt)" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+              <input type="email" id="donorEmail" required placeholder="Donor Email (receipt will be sent here)" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold" />
+              <input type="text" id="donorPhone" required placeholder="Phone / WhatsApp (+92 3XX XXXXXXX)" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold" />
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input type="tel" id="donorPhone" placeholder="Mobile / WhatsApp Number" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
-              <input type="text" id="donorCity" placeholder="City / Country" class="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
-            </div>
-            <input type="text" id="donorNotes" placeholder="Optional Dedication Note / In memory of..." class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
+            <input type="text" id="transactionRef" placeholder="Bank Transaction ID / Ref (if paid via mobile or transfer)" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs" />
           </div>
 
-          <!-- Submit Button -->
-          <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-[#1b4d3e] hover:bg-[#14392e] text-white font-extrabold text-sm sm:text-base shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <span>Complete Contribution & Generate Official Receipt</span>
-            <span>→</span>
+          <button type="submit" class="w-full py-4 px-6 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>Complete Donation & Send Confirmation Email</span> →
           </button>
-
-          <p class="text-center text-[11px] text-slate-500">
-            Registered under Societies Registration Act, 1860. Sindh Charity Commission Certified.
-          </p>
         </form>
 
       </div>
     </div>
   </section>
 
-  <!-- 8. Contact & Secretariat Section -->
+  <!-- 8. Contact & Secretariat Office -->
   <section id="contact" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Secretariat</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Get In Touch With RDO</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
-          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
-            📍
-          </div>
-          <h4 class="font-bold text-slate-900 text-sm">Central Secretariat</h4>
-          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-            Bungalow No. 106, Revenue Employees Cooperative Housing Society, Qasimabad, Hyderabad, Sindh, Pakistan.
-          </p>
-        </div>
-
-        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
-          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
-            ✉️
-          </div>
-          <h4 class="font-bold text-slate-900 text-sm">Official Email</h4>
-          <p class="text-xs text-slate-600 mt-1">
-            <a href="mailto:info.rdo58@gmail.com" class="text-emerald-700 font-bold hover:underline">info.rdo58@gmail.com</a>
-          </p>
-          <p class="text-[11px] text-slate-400 mt-1">Direct inquiries & donor acknowledgements</p>
-        </div>
-
-        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
-          <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3 text-lg">
-            🏛️
-          </div>
-          <h4 class="font-bold text-slate-900 text-sm">Statutory Oversight</h4>
-          <p class="text-xs text-slate-600 mt-1">Registration No. 0058</p>
-          <p class="text-[11px] text-slate-500">Government of Sindh Charity Commission</p>
-        </div>
-      </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs uppercase tracking-widest font-extrabold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Secretariat</span>
+      <h2 class="text-3xl font-extrabold text-slate-900">Contact & Head Office</h2>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+        <strong>Address:</strong> Bungalow No. 106, Revenue Employees Cooperative Housing Society, Qasimabad, Hyderabad, Sindh, Pakistan.
+      </p>
+      <p class="text-xs sm:text-sm text-slate-600">
+        <strong>Email:</strong> <a href="mailto:info.rdo58@gmail.com" class="text-emerald-700 underline font-semibold">info.rdo58@gmail.com</a>
+      </p>
     </div>
   </section>
 
   <!-- 9. Footer -->
-  <footer class="bg-[#102d24] text-emerald-100/80 py-12 border-t border-emerald-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-emerald-800/60">
-        <div class="flex items-center gap-3">
-          <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO Logo" class="w-10 h-10 rounded-lg border border-emerald-700/50 bg-white" />
-          <div>
-            <h4 class="font-extrabold text-white text-base">Rural Development Organization</h4>
-            <p class="text-xs text-emerald-400">Non-Political Grassroots Movement</p>
-          </div>
-        </div>
-        <div class="flex gap-4 text-xs font-medium">
-          <a href="#about" class="hover:text-white">About</a>
-          <a href="#leadership" class="hover:text-white">Leadership</a>
-          <a href="#projects" class="hover:text-white">Projects</a>
-          <a href="#donate" class="hover:text-white">Donate</a>
-          <a href="#contact" class="hover:text-white">Contact</a>
-        </div>
-      </div>
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-400/80 gap-2">
-        <p>© 2026 Rural Development Organization (RDO). Reg No. 0058 (Societies Registration Act XXI of 1860). All rights reserved.</p>
-        <p>Qasimabad, Hyderabad, Sindh, Pakistan</p>
-      </div>
-    </div>
+  <footer class="bg-[#102d24] text-emerald-100/90 py-10 text-center text-xs space-y-2">
+    <p>&copy; 2026 Rural Development Organization (RDO). All Rights Reserved.</p>
+    <p class="text-emerald-400">
+      Societies Registration Act 1860 (Reg No. 0058) · Sindh Charity Commission Certified
+    </p>
   </footer>
 
-  <!-- Receipt & Confirmation Modal -->
-  <div id="receiptModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
-      <button onclick="closeReceiptModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100">
-        ✕
-      </button>
-
-      <div id="printable-receipt" class="space-y-5">
-        <div class="flex items-center justify-between border-b pb-4">
-          <div class="flex items-center gap-3">
-            <img src="logo.jpg.jpeg" onerror="this.src='logo.jpg'" alt="RDO" class="w-12 h-12 object-contain rounded-lg border" />
-            <div>
-              <h3 class="font-black text-lg text-[#1b4d3e]">RURAL DEVELOPMENT ORGANIZATION</h3>
-              <p class="text-xs text-slate-500">Reg No. 0058 · Societies Registration Act, 1860</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-emerald-100 text-emerald-900">
-            Official Receipt
-          </span>
+  <!-- Confirmation Email & Official Receipt Modal -->
+  <div id="receiptModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden relative max-h-[90vh] overflow-y-auto">
+      <div class="bg-[#103429] text-white p-4 flex items-center justify-between">
+        <h3 class="font-bold text-sm">✉️ Donor Confirmation Email & Receipt</h3>
+        <button onclick="closeReceiptModal()" class="text-white hover:text-emerald-300 p-1">✕</button>
+      </div>
+      <div class="p-6 space-y-4 text-xs" id="printable-receipt">
+        <div class="text-center pb-3 border-b border-slate-200">
+          <h2 class="text-base font-black text-[#1b4d3e]">Rural Development Organization (RDO)</h2>
+          <p class="text-[11px] text-slate-500">Reg No. 0058 · Societies Registration Act 1860 · Sindh Charity Commission</p>
+          <span class="inline-block mt-1 font-mono font-bold bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded text-[10px]" id="recId"></span>
         </div>
-
-        <div class="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200">
-          <span class="text-xs text-emerald-800 font-bold block uppercase">Thank You For Your Generosity!</span>
-          <p class="text-sm font-semibold text-slate-800 mt-1" id="receiptGreeting">Dear Donor,</p>
-          <p class="text-xs text-slate-600 mt-1">
-            Your generous contribution directly funds grassroots community empowerment, mass literacy, and essential healthcare.
-          </p>
+        <div class="space-y-1.5 text-slate-700">
+          <p><strong>Donor Name:</strong> <span id="recName"></span></p>
+          <p><strong>Email Destination:</strong> <span id="recEmail"></span></p>
+          <p><strong>Amount Donated:</strong> <span class="text-base font-black text-[#1b4d3e]" id="recAmt"></span></p>
+          <p><strong>Designated Fund:</strong> <span id="recPurpose"></span></p>
+          <p><strong>Frequency:</strong> <span id="recFreq"></span></p>
+          <p><strong>Payment Method:</strong> <span id="recMethod"></span></p>
+          <p><strong>Transaction Reference:</strong> <span id="recRef" class="font-mono"></span></p>
         </div>
-
-        <div class="grid grid-cols-2 gap-3 text-xs bg-slate-50 p-4 rounded-xl font-mono">
-          <div><span class="text-slate-400 block">Voucher ID:</span><span id="recId" class="font-bold text-slate-900">-</span></div>
-          <div><span class="text-slate-400 block">Date & Time:</span><span id="recDate" class="font-bold text-slate-900">-</span></div>
-          <div><span class="text-slate-400 block">Amount:</span><span id="recAmount" class="font-extrabold text-[#1b4d3e] text-sm">-</span></div>
-          <div><span class="text-slate-400 block">Purpose:</span><span id="recPurpose" class="font-bold text-slate-900">-</span></div>
-          <div><span class="text-slate-400 block">Frequency:</span><span id="recFreq" class="font-bold text-slate-900">-</span></div>
-          <div><span class="text-slate-400 block">Method:</span><span id="recMethod" class="font-bold text-slate-900">-</span></div>
+        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-slate-600 italic">
+          "Thank you for your noble contribution. 100% of Zakat is segregated for certified Mustahiq."
         </div>
-
-        <div class="border-t pt-3 flex justify-between text-[11px] text-slate-500">
+        <div class="pt-4 border-t border-slate-200 flex justify-between text-[11px] text-slate-500">
           <div>
             <strong>Mr. Yar Muhammad Jamali</strong><br />Executive Director
           </div>
@@ -873,151 +809,104 @@
           </div>
         </div>
       </div>
-
-      <div class="mt-6 flex flex-wrap gap-2 pt-4 border-t">
-        <button onclick="triggerEmailClient()" class="flex-1 py-2.5 px-4 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-bold text-xs rounded-xl shadow-xs">
-          ✉️ Send Confirmation Email to Donor
+      <div class="bg-slate-100 p-4 border-t border-slate-200 flex justify-end gap-2 print:hidden">
+        <button onclick="window.print()" class="px-4 py-2 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50">
+          🖨️ Print Voucher
         </button>
-        <button onclick="window.print()" class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl">
-          🖨️ Print Tax Voucher
+        <button onclick="sendReceiptEmail()" class="px-4 py-2 bg-[#1b4d3e] text-white rounded-xl text-xs font-bold hover:bg-[#14392e]">
+          ✉️ Send Email to Donor
         </button>
       </div>
     </div>
   </div>
 
   <!-- Zakat Calculator Modal -->
-  <div id="zakatModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
-      <button onclick="closeZakatModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100">
-        ✕
-      </button>
-      <h3 class="text-xl font-bold text-slate-900">Islamic 2.5% Zakat Calculator</h3>
-      <p class="text-xs text-slate-500 mt-1 mb-4">Calculate your annual Zakat based on net liquid assets.</p>
-
+  <div id="zakatModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl p-6 relative">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-base text-[#1b4d3e]">🧮 Islamic Zakat Calculator (2.5%)</h3>
+        <button onclick="closeZakatModal()" class="text-slate-400 hover:text-slate-700">✕</button>
+      </div>
       <div class="space-y-3 text-xs">
         <div>
-          <label class="font-bold text-slate-700 block mb-1">Cash in Bank & Hand (PKR):</label>
-          <input type="number" id="zCash" value="500000" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+          <label class="block font-semibold mb-1">Cash in Hand & Bank Balances (PKR):</label>
+          <input type="number" id="zCash" oninput="calcZakat()" placeholder="e.g. 200,000" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl" />
         </div>
         <div>
-          <label class="font-bold text-slate-700 block mb-1">Gold & Silver Value (PKR):</label>
-          <input type="number" id="zGold" value="0" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+          <label class="block font-semibold mb-1">Gold, Silver & Trade Inventory (PKR):</label>
+          <input type="number" id="zGold" oninput="calcZakat()" placeholder="e.g. 100,000" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl" />
         </div>
         <div>
-          <label class="font-bold text-slate-700 block mb-1">Short-term Liabilities / Debts (PKR):</label>
-          <input type="number" id="zDebts" value="0" oninput="calculateZakat()" class="w-full p-2 bg-slate-50 border rounded-xl" />
+          <label class="block font-semibold mb-1 text-rose-700">Minus Short-term Liabilities / Debts (PKR):</label>
+          <input type="number" id="zDebts" oninput="calcZakat()" placeholder="e.g. 20,000" class="w-full p-2 bg-slate-50 border border-slate-200 rounded-xl" />
         </div>
-
-        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 mt-4 text-center">
-          <span class="text-xs uppercase font-bold text-emerald-800 block">Total Zakat Payable (2.5%):</span>
-          <span id="zakatDue" class="text-2xl font-black text-[#1b4d3e]">PKR 12,500</span>
+        <div class="p-3 bg-slate-900 text-white rounded-xl flex justify-between items-center">
+          <span class="font-bold">Calculated Zakat (2.5%):</span>
+          <span class="font-black text-emerald-300 text-base" id="zTotal">PKR 0</span>
         </div>
-
-        <button onclick="applyZakatToDonation()" class="w-full py-3 bg-[#1b4d3e] text-white font-bold rounded-xl mt-2">
-          Apply to RDO Zakat Fund (Mustahiq Only) →
+        <button onclick="applyZakat()" class="w-full py-2.5 bg-[#1b4d3e] text-white rounded-xl font-bold hover:bg-[#14392e]">
+          Apply Zakat to Donation Form
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Interactive JavaScript Logic -->
+  <!-- JavaScript Functions -->
   <script>
-    let activeFrequency = 'One-Time';
-    let activeMethod = 'card';
-    let currentDonation = null;
+    let currentFreq = 'One-Time';
+    let currentMethod = 'card';
+    let lastReceiptData = null;
 
-    const BANK_DATA = {
-      meezan: {
-        title: 'Meezan Bank Limited',
-        accountTitle: 'Rural Development Organization',
-        accountNumber: '0200 0100 0000 00',
-        iban: 'PK00 MEZN 0002 0001 0000 0000',
-        branch: 'Qasimabad Branch, Hyderabad',
-        isZakat: true
-      },
-      habib: {
-        title: 'Habib Metropolitan Bank Ltd.',
-        accountTitle: 'Rural Development Organization',
-        accountNumber: '6-1-00-00000-000-000000',
-        iban: 'PK00 HMET 0006 0100 0000 0000',
-        branch: 'Hyderabad Main Branch',
-        isZakat: false
-      },
-      sindh: {
-        title: 'Sindh Bank Limited',
-        accountTitle: 'Rural Development Organization',
-        accountNumber: '0300 0000 0000 00',
-        iban: 'PK00 SNDH 0003 0000 0000 0000',
-        branch: 'Qasimabad Branch, Hyderabad',
-        isZakat: false
-      },
-      fwbl: {
-        title: 'First Women Bank Ltd.',
-        accountTitle: 'Rural Development Organization',
-        accountNumber: '0100 0000 0000 00',
-        iban: 'PK00 FWBL 0001 0000 0000 0000',
-        branch: 'Hyderabad Cantonment',
-        isZakat: false
-      },
-      mcb: {
-        title: 'MCB Bank Limited',
-        accountTitle: 'Rural Development Organization',
-        accountNumber: '0400 0000 0000 00',
-        iban: 'PK00 MUCB 0004 0000 0000 0000',
-        branch: 'Qasimabad Main',
-        isZakat: false
-      }
+    const banks = {
+      'Meezan Bank': { account: '1606 0115220768', iban: 'PK81 MEZN 0016 0601 1522 0768' },
+      'Habib Metropolitan Bank Ltd.': { account: '6-0', iban: 'PK59 MPBL 0162 0271 4096 9070' },
+      'Sindh Bank Limited': { account: '0004011822732001', iban: 'PK97 SIND 0004 0118 2273 2001' },
+      'First Women Bank Ltd.': { account: '0017027260510000', iban: 'PK32 FWOM 0017 0272 6051 0000' },
+      'MCB Bank Limited': { account: '1687 5266 6101 0484', iban: 'PK03 MUCB 1687 5266 6101 0484' }
     };
 
     function setFrequency(freq) {
-      activeFrequency = freq;
-      document.querySelectorAll('.freq-btn').forEach(b => {
-        b.className = 'freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100';
+      currentFreq = freq;
+      document.querySelectorAll('.freq-btn').forEach(btn => {
+        btn.classList.remove('bg-[#1b4d3e]', 'text-white', 'border-[#1b4d3e]');
+        btn.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200');
       });
-      const target = event.currentTarget;
-      target.className = 'freq-btn p-2.5 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]';
+      const idMap = { 'One-Time': 'freq-onetime', 'Monthly Sustainer': 'freq-monthly', 'Quarterly': 'freq-quarterly', 'Annual Zakat': 'freq-annual' };
+      const active = document.getElementById(idMap[freq]);
+      if (active) {
+        active.classList.add('bg-[#1b4d3e]', 'text-white', 'border-[#1b4d3e]');
+        active.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200');
+      }
     }
 
     function setPaymentMethod(method) {
-      activeMethod = method;
-      document.querySelectorAll('.pm-btn').forEach(b => {
-        b.className = 'pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-slate-50 text-slate-700 border-slate-200';
+      currentMethod = method;
+      document.querySelectorAll('.pm-btn').forEach(btn => {
+        btn.classList.remove('bg-[#1b4d3e]', 'text-white', 'border-[#1b4d3e]');
+        btn.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200');
       });
-      document.getElementById('pm-' + method).className = 'pm-btn p-3 rounded-xl border text-xs font-bold text-center bg-[#1b4d3e] text-white border-[#1b4d3e]';
+      document.getElementById('pm-' + method).classList.add('bg-[#1b4d3e]', 'text-white', 'border-[#1b4d3e]');
+      document.getElementById('pm-' + method).classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200');
 
-      ['card', 'bank', 'wallet', 'swift'].forEach(m => {
-        const el = document.getElementById('sub-' + m);
-        if (el) el.classList.add('hidden');
-      });
-      const activeEl = document.getElementById('sub-' + method);
-      if (activeEl) activeEl.classList.remove('hidden');
-
-      if (method === 'bank') renderBankDetails();
+      document.getElementById('sub-card').classList.add('hidden');
+      document.getElementById('sub-bank').classList.add('hidden');
+      document.getElementById('sub-wallet').classList.add('hidden');
+      document.getElementById('sub-swift').classList.add('hidden');
+      document.getElementById('sub-' + method).classList.remove('hidden');
     }
 
-    function renderBankDetails() {
-      const selectedKey = document.getElementById('bankSelect').value;
-      const b = BANK_DATA[selectedKey];
-      const box = document.getElementById('bankDetailsBox');
-      box.innerHTML = `
-        <p><strong>Bank:</strong> ${b.title}</p>
-        <p><strong>Account Title:</strong> ${b.accountTitle}</p>
-        <p><strong>Account Number:</strong> ${b.accountNumber}</p>
-        <p><strong>IBAN:</strong> <span class="text-[#1b4d3e] font-bold">${b.iban}</span></p>
-        <p><strong>Branch:</strong> ${b.branch}</p>
-        ${b.isZakat ? '<span class="inline-block mt-1 px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-sans text-[10px] font-bold">100% Shariah Compliant Zakat Account</span>' : ''}
-      `;
-    }
-
-    function prefillDonation(amt, purpose) {
-      document.getElementById('donationAmount').value = amt.toLocaleString();
-      const sel = document.getElementById('fundPurpose');
-      for (let i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].text.includes(purpose) || sel.options[i].value.includes(purpose)) {
-          sel.selectedIndex = i;
-          break;
-        }
+    function updateBankInfo() {
+      const val = document.getElementById('bankSelect').value;
+      const b = banks[val];
+      if (b) {
+        document.getElementById('displayAccount').innerText = b.account;
+        document.getElementById('displayIban').innerText = b.iban;
       }
+    }
+
+    function prefillDonation(amount, purpose) {
+      document.getElementById('donationAmount').value = Number(amount).toLocaleString();
+      document.getElementById('fundPurpose').value = purpose;
       const el = document.getElementById('donate');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -1026,101 +915,81 @@
       e.preventDefault();
       const name = document.getElementById('donorName').value;
       const email = document.getElementById('donorEmail').value;
-      const amt = document.getElementById('donationAmount').value;
+      const phone = document.getElementById('donorPhone').value;
+      const amount = document.getElementById('donationAmount').value;
       const purpose = document.getElementById('fundPurpose').value;
+      const tx = document.getElementById('transactionRef').value || ('TRX-' + Math.floor(100000 + Math.random() * 900000));
+      const voucherId = 'RDO-REC-2026-' + Math.floor(10000 + Math.random() * 90000);
 
-      currentDonation = {
-        id: 'RDO-' + Math.floor(100000 + Math.random() * 900000),
-        name,
-        email,
-        amount: amt,
-        purpose,
-        frequency: activeFrequency,
-        method: activeMethod.toUpperCase(),
-        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+      lastReceiptData = {
+        name, email, phone, amount, purpose, tx, voucherId,
+        freq: currentFreq, method: currentMethod.toUpperCase()
       };
 
-      document.getElementById('receiptGreeting').textContent = `Dear ${name},`;
-      document.getElementById('recId').textContent = currentDonation.id;
-      document.getElementById('recDate').textContent = currentDonation.date;
-      document.getElementById('recAmount').textContent = `PKR ${amt}`;
-      document.getElementById('recPurpose').textContent = purpose;
-      document.getElementById('recFreq').textContent = activeFrequency;
-      document.getElementById('recMethod').textContent = activeMethod.toUpperCase();
+      document.getElementById('recId').innerText = voucherId;
+      document.getElementById('recName').innerText = name;
+      document.getElementById('recEmail').innerText = email;
+      document.getElementById('recAmt').innerText = 'PKR ' + amount;
+      document.getElementById('recPurpose').innerText = purpose;
+      document.getElementById('recFreq').innerText = currentFreq;
+      document.getElementById('recMethod').innerText = currentMethod === 'card' ? 'Official Online Gateway / 1Link' : currentMethod.toUpperCase();
+      document.getElementById('recRef').innerText = tx;
 
-      const modal = document.getElementById('receiptModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      document.getElementById('receiptModal').classList.remove('hidden');
+
+      // Trigger pre-filled confirmation email directly
+      sendReceiptEmail();
+    }
+
+    function sendReceiptEmail() {
+      if (!lastReceiptData) return;
+      const subject = encodeURIComponent(`Donation Confirmation [${lastReceiptData.voucherId}] - Rural Development Organization`);
+      const body = encodeURIComponent(
+        `Dear ${lastReceiptData.name},\n\n` +
+        `Thank you for your generous contribution to Rural Development Organization (RDO).\n\n` +
+        `Voucher ID: ${lastReceiptData.voucherId}\n` +
+        `Amount: PKR ${lastReceiptData.amount}\n` +
+        `Designated Purpose: ${lastReceiptData.purpose}\n` +
+        `Frequency: ${lastReceiptData.freq}\n` +
+        `Payment Method: ${lastReceiptData.method}\n` +
+        `Transaction Ref: ${lastReceiptData.tx}\n\n` +
+        `Rural Development Organization (RDO)\n` +
+        `Registration No. 0058 · Societies Registration Act 1860\n` +
+        `Sindh Charity Commission Certified\n` +
+        `Qasimabad, Hyderabad, Sindh, Pakistan\n` +
+        `Email: info.rdo58@gmail.com`
+      );
+      window.location.href = `mailto:${lastReceiptData.email}?cc=info.rdo58@gmail.com&subject=${subject}&body=${body}`;
     }
 
     function closeReceiptModal() {
-      const modal = document.getElementById('receiptModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    function triggerEmailClient() {
-      if (!currentDonation) return;
-      const subject = encodeURIComponent(`Donation Confirmation Receipt: ${currentDonation.id} - Rural Development Organization`);
-      const body = encodeURIComponent(
-`Dear ${currentDonation.name},
-
-Thank you for your generous contribution to Rural Development Organization (RDO).
-
-DONATION RECEIPT SUMMARY:
-------------------------------------------
-Receipt / Voucher ID: ${currentDonation.id}
-Date: ${currentDonation.date}
-Donor Name: ${currentDonation.name}
-Amount: PKR ${currentDonation.amount}
-Designated Purpose: ${currentDonation.purpose}
-Frequency: ${currentDonation.frequency}
-Payment Method: ${currentDonation.method}
-------------------------------------------
-
-STATUTORY REGISTRATION & COMPLIANCE:
-Rural Development Organization (RDO)
-Registration No. 0058 (Societies Registration Act XXI of 1860)
-Sindh Charity Commission Certified
-
-Central Secretariat:
-Bungalow No. 106, Revenue Employees Cooperative Housing Society,
-Qasimabad, Hyderabad, Sindh, Pakistan.
-Email: info.rdo58@gmail.com
-
-Mr. Yar Muhammad Jamali (Executive Director)
-Mr. Anas Memon (Chief Operating Officer)`
-      );
-      window.location.href = `mailto:${currentDonation.email}?cc=info.rdo58@gmail.com&subject=${subject}&body=${body}`;
+      document.getElementById('receiptModal').classList.add('hidden');
     }
 
     function openZakatModal() {
-      const modal = document.getElementById('zakatModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      calculateZakat();
+      document.getElementById('zakatModal').classList.remove('hidden');
     }
 
     function closeZakatModal() {
-      const modal = document.getElementById('zakatModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
+      document.getElementById('zakatModal').classList.add('hidden');
     }
 
-    function calculateZakat() {
+    function calcZakat() {
       const cash = parseFloat(document.getElementById('zCash').value) || 0;
       const gold = parseFloat(document.getElementById('zGold').value) || 0;
       const debts = parseFloat(document.getElementById('zDebts').value) || 0;
       const net = Math.max(0, (cash + gold) - debts);
       const zakat = Math.round(net * 0.025);
-      document.getElementById('zakatDue').textContent = `PKR ${zakat.toLocaleString()}`;
+      document.getElementById('zTotal').innerText = 'PKR ' + zakat.toLocaleString();
+      return zakat;
     }
 
-    function applyZakatToDonation() {
-      const dueText = document.getElementById('zakatDue').textContent.replace(/[^0-9]/g, '');
-      const amt = parseInt(dueText, 10) || 12500;
+    function applyZakat() {
+      const zakat = calcZakat();
+      if (zakat > 0) {
+        prefillDonation(zakat, 'Zakat (Mustahiq Only)');
+      }
       closeZakatModal();
-      prefillDonation(amt, 'Zakat (Mustahiq Only)');
     }
   </script>
 </body>
